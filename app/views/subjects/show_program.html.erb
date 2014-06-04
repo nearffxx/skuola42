@@ -1,0 +1,36 @@
+<section id = "subject_topic">
+	<h1>PROGRAMMA: <%= @subject.name %></h1>
+	
+	<h3><%= "Tour materie del #{@year}° anno" if @tour_year_id %></h3>
+	
+	<div id = "subject_programs">
+		<ol>
+       		<li class = "bullet">
+       			<h4>Classi prime: </h4> <%= @first_year_plan.program if @first_year_plan  %>
+        	</li>
+        	<li class = "bullet">
+       			<h4>Classi seconde: </h4> <%= @second_year_plan.program if @second_year_plan %>
+        	</li>
+        	<li class = "bullet">
+       			<h4>Classi terze: </h4> <%= @third_year_plan.program if @third_year_plan %>
+        	</li>
+        	<li class = "bullet">
+       			<h4>Classi quarte: </h4> <%= @fourth_year_plan.program if @fourth_year_plan  %>
+        	</li>
+        	<li class = "bullet">
+       			<h4>Classi quinte: </h4> <%= @fifth_year_plan.program  if @fifth_year_plan %>
+        	</li>
+    	</ol>
+    </div>
+    
+	<div class = "transition_link">
+  		<%= link_to 'Descrizione', subject_path(@subject, from_year: @tour_year_id) %> </br>
+  		<%= link_to 'Professori che la insegnano', show_professors_subject_path(@subject) %> </br>
+  		<%= link_to 'Materie per anno scolastico', subjects_path %> </br>
+  	</div> </br>
+  
+  	<div class="group_link">
+  		<%= link_to "<<Prev", show_program_subject_path(@subjects[@prev].id, from_year: @tour_year_id) if @prev %>
+  		<%= link_to "Next>>", show_program_subject_path(@subjects[@next].id, from_year: @tour_year_id) if @next %>
+  	</div>
+</section>

@@ -1,0 +1,22 @@
+<section id="subject_topic">
+	<h1>DESCRIZIONE: <%= @subject.name %></h1>
+	
+	<div class = "image">
+    	<%= image_tag("/subjects/#{@subject.img_url}") %>
+   	</div>
+   
+	<h3><%= "Tour materie del #{@year}° anno" if @tour_year_id %></h3>
+	
+	<p class="description_topic"><%= @subject.description %></p>
+	
+	<div class="transition_link">
+  		<%= link_to 'Programma', show_program_subject_path(@subject, from_year: @tour_year_id) %> </br>
+  		<%= link_to 'Professori che la insegnano', show_professors_subject_path(@subject) %> </br>
+  		<%= link_to 'Materie per anno scolastico', subjects_path %> </br>
+  </div> </br>
+  	
+  	<div class="group_link">
+  		<%= link_to "<<Prev", subject_path(@subjects[@prev].id, from_year: @tour_year_id) if @prev %>
+  		<%= link_to "Next>>", subject_path(@subjects[@next].id, from_year: @tour_year_id) if @next %>
+  	</div>
+</section>

@@ -1,0 +1,25 @@
+<section id = "professor_topic">
+	<h1>PROFESSORE <%= @professor.surname+' '+@professor.name %></h1>
+	
+	<div class = "image">
+    	<%= image_tag("/professors/#{@professor.img_url}") %>
+   	</div>
+   
+	<div id = "professor_contacts">
+		<h3>Contatti</h3>
+		<h4>Email: </h4> <%= @professor.email %>
+		<h4>Telefono: </h4> <%= @professor.telephone %>
+  	</div>
+  	
+	<div id = "professor_subjects">
+		<h3>Materie insegnate</h3>
+  		<% @subjects.each do |s| %>
+        	<%= link_to s.name, subject_path(s) %> | 
+    	<% end %>
+  	</div> </br>
+  	
+  	<div class = "transition_link">	
+  		<%= link_to 'Tutti i professori', professors_path %> </br>
+  		<%= link_to "Torna ai professori di #{@subject.name}", show_professors_subject_path(@subject) if @subject %> </br>
+  	</div>
+</section>

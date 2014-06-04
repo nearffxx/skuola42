@@ -1,4 +1,15 @@
-Rails.application.routes.draw do
+Skuola42::Application.routes.draw do
+  root to: "home#index"
+  match 'home' => 'home#index', via: :get
+  
+  resources :subjects, only: [:index, :show] do
+    member do
+      get 'show_program'
+      get 'show_professors'
+    end
+  end
+  
+  resources :professors, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

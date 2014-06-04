@@ -2,13 +2,29 @@
 <html>
 <head>
   <title>Skuola42</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="landmarks">
+	<h1> <%= link_to "SKUOLA 42", home_path  %></h1>
+  	<nav>
+  		<ul>
+  	  		<h4>DIDATTICA</h4>	
+      		<li>
+        		<%= link_to 'Materie', subjects_path %>
+      		</li>
+      		<li>
+        		<%= link_to 'Professori', professors_path %> 
+      		</li>
+    	</ul>
+  	</nav>
+</div>
+
+<div id="content">
+  <%= yield %>
+</div>
 
 </body>
 </html>
