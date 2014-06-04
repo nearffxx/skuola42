@@ -8,7 +8,7 @@
   		<ul>
     		<% @first_year_subjects.each do |s| %>
         		<li class = "bullet">
-           			<%= link_to s.name, subject_path(s, from_year: year_id(:first)) %>
+           			<%= link_to s.name, subject_path(s, from_year: @first_year_id ) %>
         		</li>
     		<% end %>
   		</ul>
@@ -17,7 +17,7 @@
   		<ul>
     		<% @second_year_subjects.each do |s| %>
         		<li class = "bullet">
-           			<%= link_to s.name, subject_path(s, from_year: year_id(:second)) %>
+           			<%= link_to s.name, subject_path(s, from_year: @second_year_id ) %>
         		</li>
     		<% end %>
   		</ul>
@@ -26,7 +26,7 @@
   		<ul>
     		<% @third_year_subjects.each do |s| %>
         		<li class = "bullet">
-           			<%= link_to s.name, subject_path(s, from_year: year_id(:third)) %>
+           			<%= link_to s.name, subject_path(s, from_year: @third_year_id ) %>
         		</li>
     		<% end %>
   		</ul>
@@ -35,7 +35,7 @@
   		<ul>
     		<% @fourth_year_subjects.each do |s| %>
         		<li class = "bullet">
-           			<%= link_to s.name, subject_path(s, from_year: year_id(:fourth)) %>
+           			<%= link_to s.name, subject_path(s, from_year: @fourth_year_id ) %>
         		</li>
     		<% end %>
   		</ul>
@@ -44,7 +44,7 @@
   		<ul>
     		<% @fifth_year_subjects.each do |s| %>
         		<li class = "bullet">
-           			<%= link_to s.name, subject_path(s, from_year: year_id(:fifth)) %>
+           			<%= link_to s.name, subject_path(s, from_year: @fifth_year_id ) %>
         		</li>
     		<% end %>
   		</ul>

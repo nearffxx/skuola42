@@ -1,12 +1,12 @@
 <section id="subject_topic">
 	<h1>DESCRIZIONE: <%= @subject.name %></h1>
 	
+	<h3><%= "Tour materie del #{@year}° anno" if @tour_year_id %></h3>
+	
 	<div class = "image">
     	<%= image_tag("/subjects/#{@subject.img_url}") %>
    	</div>
-   
-	<h3><%= "Tour materie del #{@year}° anno" if @tour_year_id %></h3>
-	
+
 	<p class="description_topic"><%= @subject.description %></p>
 	
 	<div class="transition_link">

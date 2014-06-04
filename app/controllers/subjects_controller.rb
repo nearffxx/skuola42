@@ -2,11 +2,16 @@ class SubjectsController < ApplicationController
   include ApplicationHelper
   
   def index
-    @first_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: year_id(:first)}).order(name: :asc)
-    @second_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: year_id(:second)}).order(name: :asc)
-    @third_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: year_id(:third)}).order(name: :asc)
-    @fourth_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: year_id(:fourth)}).order(name: :asc)
-    @fifth_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: year_id(:fifth)}).order(name: :asc)
+    @first_year_id = year_id(:first)
+    @second_year_id = year_id(:second)
+    @third_year_id = year_id(:third)
+    @fourth_year_id = year_id(:fourth)
+    @fifth_year_id = year_id(:fifth)
+    @first_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: @first_year_id }).order(name: :asc)
+    @second_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: @second_year_id }).order(name: :asc)
+    @third_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: @third_year_id }).order(name: :asc)
+    @fourth_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: @fourth_year_id }).order(name: :asc)
+    @fifth_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: @fifth_year_id }).order(name: :asc)
   end
 
   def show
