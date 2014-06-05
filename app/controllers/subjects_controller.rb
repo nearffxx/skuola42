@@ -15,23 +15,41 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @subject = Subject.find(params[:id])
+    init_topic
+    init_from_page
     init_tour
   end
   
   def show_program
-    @subject = Subject.find(params[:id])
+    init_topic
+    init_tour
     @first_year_plan = Plan.find_by(subject_id: @subject.id, school_year_id: year_id(:first))
     @second_year_plan = Plan.find_by(subject_id: @subject.id, school_year_id: year_id(:second))
     @third_year_plan = Plan.find_by(subject_id: @subject.id, school_year_id: year_id(:third))
     @fourth_year_plan = Plan.find_by(subject_id: @subject.id, school_year_id: year_id(:fourth))
     @fifth_year_plan = Plan.find_by(subject_id: @subject.id, school_year_id: year_id(:fifth))
-    init_tour
   end
   
   def show_professors
     @subject = Subject.find(params[:id])
     @professors = @subject.professors.order(surname: :asc, name: :asc)
+  end
+  
+  def show_events
+    @subject = Subject.find(params[:id])
+    @events = @subject.events.order(datetime: :asc)
+  end
+  
+  def init_topic
+    @subject = Subject.find(params[:id])
+  end
+  
+  def init_from_page
+    @from_event_id = params[:from_event]
+    @from_event = Event.find(@from_event_id) if @from_event_id
+    
+    @from_professor_id = params[:from_professor]
+    @from_professor = Professor.find(@from_professor_id) if @from_professor_id
   end
   
   def init_tour

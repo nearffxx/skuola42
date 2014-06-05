@@ -6,10 +6,24 @@ Skuola42::Application.routes.draw do
     member do
       get 'show_program'
       get 'show_professors'
+      get 'show_events'
     end
   end
   
   resources :professors, only: [:index, :show]
+  
+  resources :structures, only: [:index, :show] do
+    member do
+      get 'show_events'
+    end
+  end
+  
+  resources :events, only: [:index, :show] do
+    member do
+      get 'index_types'
+      get 'show_practical_info'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

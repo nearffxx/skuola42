@@ -1,0 +1,28 @@
+<section id = "event_practical_info_topic">
+	<h1>EVENTO <%= @event.name %></h1>
+	
+	<p id = "date_time">Data e ora: <%= @event.datetime.to_formatted_s(:short) %></p>
+	
+	<h3>Interventi</h3>
+	
+	<p class = "description_topic"><%= @event.participations %></p>
+	
+	<div class = "structural_link">
+  		<%= link_to 'Descrizione dettagliata', event_path(@event) %> </br>
+  	</div> </br>
+  	
+  	<div class = "transition_link">
+  		<%= link_to "Struttura che ospita l'evento", structure_path(@host_structure) %> </br>
+  	</div> </br>
+  	
+  	<div class = "group_link">
+  		<%= link_to "Eventi per #{@type.name}", index_types_event_path(@type) %> </br>
+  	</div> </br>
+  	
+  	<div class = "transition_link">
+		<h3>Materie collegate</h3>
+  		<% @related_subjects.each do |s| %>
+        	<%= link_to s.name, subject_path(s, from_event: @event.id) %> | 
+    	<% end %>
+  	</div> </br>
+</section>

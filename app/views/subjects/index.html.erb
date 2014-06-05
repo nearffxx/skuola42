@@ -3,8 +3,9 @@
 
 	<p class = "ida_description">Gli anni scolastici previsti dal piano formativo sono cinque. Da qui è possibile raggiungere le materie che verranno affrontate durante un certo anno.</p>
 	
-	<div id = "ida_list_subjects">
-		<h2>PRIMO ANNO</h2>
+	<div id = "list_subjects">
+		<h3>PRIMO ANNO</h3>
+		<%= link_to 'Inizia il tour del primo anno', subject_path(@first_year_subjects[0].id, from_year: @first_year_id ) %>
   		<ul>
     		<% @first_year_subjects.each do |s| %>
         		<li class = "bullet">
@@ -13,7 +14,8 @@
     		<% end %>
   		</ul>
   	
-  		<h2>SECONDO ANNO</h2>
+  		<h3>SECONDO ANNO</h3>
+  		<%= link_to 'Inizia il tour del secondo anno', subject_path(@second_year_subjects[0].id, from_year: @second_year_id ) %>
   		<ul>
     		<% @second_year_subjects.each do |s| %>
         		<li class = "bullet">
@@ -22,7 +24,8 @@
     		<% end %>
   		</ul>
   	
-  		<h2>TERZO ANNO</h2>
+  		<h3>TERZO ANNO</h3>
+  		<%= link_to 'Inizia il tour del terzo anno', subject_path(@third_year_subjects[0].id, from_year: @third_year_id ) %>
   		<ul>
     		<% @third_year_subjects.each do |s| %>
         		<li class = "bullet">
@@ -31,7 +34,8 @@
     		<% end %>
   		</ul>
   
-    	<h2>QUARTO ANNO</h2>
+    	<h3>QUARTO ANNO</h3>
+    	<%= link_to 'Inizia il tour del quarto anno', subject_path(@fourth_year_subjects[0].id, from_year: @fourth_year_id ) %>
   		<ul>
     		<% @fourth_year_subjects.each do |s| %>
         		<li class = "bullet">
@@ -40,7 +44,8 @@
     		<% end %>
   		</ul>
 
-		<h2>QUINTO ANNO</h2>
+		<h3>QUINTO ANNO</h3>
+		<%= link_to 'Inizia il tour del quinto anno', subject_path(@fifth_year_subjects[0].id, from_year: @fifth_year_id ) %>
   		<ul>
     		<% @fifth_year_subjects.each do |s| %>
         		<li class = "bullet">

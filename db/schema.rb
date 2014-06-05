@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603174825) do
+ActiveRecord::Schema.define(version: 20140605171536) do
+
+  create_table "event_types", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.integer  "event_type_id"
+    t.integer  "structure_id"
+    t.text     "description"
+    t.text     "participations"
+    t.datetime "datetime"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_subjects", force: true do |t|
+    t.integer "event_id"
+    t.integer "subject_id"
+  end
 
   create_table "plans", force: true do |t|
     t.integer  "subject_id"
@@ -38,6 +61,14 @@ ActiveRecord::Schema.define(version: 20140603174825) do
 
   create_table "school_years", force: true do |t|
     t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "structures", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,4 @@
-<section id = "subject_topic">
+<section id = "subject_program_topic">
 	<h1>PROGRAMMA: <%= @subject.name %></h1>
 	
 	<h3><%= "Tour materie del #{@year}° anno" if @tour_year_id %></h3>
@@ -23,13 +23,17 @@
     	</ol>
     </div>
     
-	<div class = "transition_link">
+    <div class = "structural_link">
   		<%= link_to 'Descrizione', subject_path(@subject, from_year: @tour_year_id) %> </br>
+  	</div> </br>
+  	
+	<div class = "transition_link">
+		<%= link_to 'Eventi in cui è argomento', show_events_subject_path(@subject) %> </br>
   		<%= link_to 'Professori che la insegnano', show_professors_subject_path(@subject) %> </br>
-  		<%= link_to 'Materie per anno scolastico', subjects_path %> </br>
   	</div> </br>
   
   	<div class="group_link">
+  		<%= link_to 'Materie per anno scolastico', subjects_path %> </br>
   		<%= link_to "<<Prev", show_program_subject_path(@subjects[@prev].id, from_year: @tour_year_id) if @prev %>
   		<%= link_to "Next>>", show_program_subject_path(@subjects[@next].id, from_year: @tour_year_id) if @next %>
   	</div>

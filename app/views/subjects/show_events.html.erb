@@ -1,11 +1,11 @@
-<section id = "tda_professors_subject">
-	<h1>PROFESSORI CHE INSEGNANO: <%= @subject.name %></h1>
+<section id = "tda_events_subject">
+	<h1>EVENTI CHE RIGUARDANO: <%= @subject.name %></h1>
 	
 	<div class = "transition_link">
   		<ul>
-    		<% @professors.each do |p| %>
+    		<% @events.each do |e| %>
         		<li class = "bullet">
-           			<%= link_to p.surname+' '+p.name, professor_path(id: p, from_subject: @subject.id) %>
+           			<%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(id: e, from_events_subject: @subject.id) %>
         		</li>
     		<% end %>
   		</ul>

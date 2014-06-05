@@ -11,15 +11,19 @@
 		<h4>Telefono: </h4> <%= @professor.telephone %>
   	</div>
   	
-	<div id = "professor_subjects">
+	<div class = "transition_link">
 		<h3>Materie insegnate</h3>
   		<% @subjects.each do |s| %>
-        	<%= link_to s.name, subject_path(s) %> | 
+        	<%= link_to s.name, subject_path(id: s, from_professor: @professor) %> | 
     	<% end %>
   	</div> </br>
   	
   	<div class = "transition_link">	
-  		<%= link_to 'Tutti i professori', professors_path %> </br>
-  		<%= link_to "Torna ai professori di #{@subject.name}", show_professors_subject_path(@subject) if @subject %> </br>
+  		<%= link_to "Torna ai professori di #{@from_subject.name}", show_professors_subject_path(@from_subject_id) if @from_subject_id %> </br>
   	</div>
+  	
+  	<div class = "group_link">	
+  		<%= link_to 'Tutti i professori', professors_path %> </br>
+  	</div>
+  	
 </section>
