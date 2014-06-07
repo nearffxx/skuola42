@@ -1,0 +1,15 @@
+<section id = "tda_courses_subject">
+	<h1>CLASSI CHE FANNO <%= @subject.name %></h1>
+	
+	<div class = "transition_link">
+  		<ul>
+    		<% @courses.each do |c| %>
+           		<%= link_to c.name, course_path(id: c, from_subject: @subject.id) %> |
+    		<% end %>
+  		</ul>
+  	</div>
+    
+    <div class = "transition_link">
+  		<%= link_to "Indietro alla materia #{@subject.name}", subject_path(@subject) %> </br>
+  	</div>
+</section>

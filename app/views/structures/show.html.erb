@@ -13,6 +13,7 @@
   	
   	<div class = "group_link">	
   		<%= link_to 'Tutte le strutture', structures_path %> </br>
+  		<%= link_to "<<Prev", structure_path(@structures[@prev].id) if @prev %>
+  		<%= link_to "Next>>", structure_path(@structures[@next].id) if @next %>
   	</div>
-  	
 </section>

@@ -7,15 +7,31 @@
 </head>
 <body>
 
-<div id="landmarks">
+<div id = "landmarks">
 	<h1> <%= link_to "SKUOLA 42", home_path  %></h1>
   	<nav>
   		<ul>
+  			<h4>BENVENUTO</h4>	
+      		<li>
+        		<%= link_to 'Storia e tradizione', school_index_path %>
+      		</li>
+      		<li>
+        		<%= link_to 'Missione e principi', school_show_missions_path %>
+      		</li>
+      		<li>
+        		<%= link_to 'Regole generali', school_show_rules_path %>
+      		</li>
+      		<li>
+        		<%= link_to 'Associazione genitori', school_show_association_path %>
+      		</li>
   			<h4>UTILITA'</h4>	
       		<li>
         		<%= link_to 'Strutture', structures_path %>
       		</li>
   	  		<h4>DIDATTICA</h4>	
+  	  		<li>
+        		<%= link_to 'Classi', courses_path %>
+      		</li>
       		<li>
         		<%= link_to 'Materie', subjects_path %>
       		</li>
@@ -24,6 +40,9 @@
       		</li>
       		<li>
         		<%= link_to 'Eventi', events_path %> 
+      		</li>
+      		<li>
+        		<%= link_to 'Incontri', meetings_path %> 
       		</li>
     	</ul>
   	</nav>

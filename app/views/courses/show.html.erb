@@ -1,0 +1,35 @@
+<section id = "course_topic">
+	<h1>CLASSE: <%= @course.name %></h1>
+
+	<div class = "structural_link">
+  		<%= link_to 'Libri di testo e riferimenti ausiliari', show_materials_course_path(@course) %> </br>
+  	</div> </br>
+  	
+  	<div class = "transition_link">
+  		<%= link_to "Torna alle classi in cui si fa #{@from_subject.name}", show_courses_subject_path(@from_subject_id) if @from_subject_id %> </br>
+  	</div>
+  	
+  	<div class = "group_link">
+  		<%= link_to 'Tutte le classi', courses_path %> </br>
+  	</div>
+  	
+  	<div id = "course_room">
+  		<h3>Raggiungere l'aula</h3>
+  		<p class = "short_line"><%= @course.location%></p>
+  	</div>
+  	
+  	<div id = "course_schedule">
+  		<h3>Orario didattico</h3>
+  		<% @schedules.each do |s| %>
+  			<h4><%= s.school_day.name %></h4>
+        	<p class = "short_line"><%= s.lessons %></p>
+    	<% end %>
+  	</div>
+  	
+  	<div class = "transition_link">
+		<h3>Materie</h3>
+  		<% @subjects.each do |s| %>
+        	<%= link_to s.name, subject_path(id: s, from_course: @course) %> | 
+    	<% end %>
+  	</div> </br>
+</section>

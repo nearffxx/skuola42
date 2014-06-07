@@ -7,6 +7,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+SchoolYear.delete_all
+school_years = SchoolYear.create([{name: '1'},{name: '2'},{name: '3'},{name: '4'},{name: '5'}])
+
+SchoolDay.delete_all
+school_days = SchoolDay.create([{name: 'Lunedì'},{name: 'Martedì'},{name: 'Mercoledì'},{name: 'Giovedì'},{name: 'Venerdì'}])
+
 Subject.delete_all
 subjects = Subject.create([{name: 'Matematica', img_url: 'matematica.jpg', description: "L'obiettivo è aiutare i ragazzi a riflettere su problemi analitici. Col termine matematica si designa la disciplina (ed il relativo corpo di conoscenze) che studia problemi concernenti quantità, estensioni e figure spaziali, movimenti di corpi, e tutte le strutture che permettono di trattare questi aspetti in modo generale. La matematica fa largo uso degli strumenti della logica e sviluppa le proprie conoscenze nel quadro di sistemi ipotetico-deduttivi che, a partire da definizioni rigorose e da assiomi riguardanti proprietà degli oggetti definiti (risultati da un procedimento di astrazione, come triangoli, funzioni, vettori ecc.), raggiunge nuove certezze, per mezzo delle dimostrazioni, attorno a proprietà meno intuitive degli oggetti stessi (espresse dai teoremi)."},
                            {name: 'Storia', img_url: 'storia.jpg', description: "La storia è la materia che si occupa dello studio del passato tramite l'uso di fonti, cioè di tutto ciò che, configurandosi come documento, possa trasmettere il sapere. Più precisamente, la storia è la ricerca sui fatti del passato e il tentativo di una narrazione continua e sistematica degli stessi fatti, in quanto considerati di importanza per la specie umana; i fatti vengono di norma interpretati alla luce della visione etica propria dello storico in buona fede."},
@@ -23,10 +29,7 @@ professors = Professor.create([{name: 'Luca', surname: 'Amaldo', img_url: 'amald
                                {name: 'Guido', surname: 'Veloce', img_url: 'veloce.jpg', email: 'guido.veloce@gmail.com', telephone: '03361234567'},
                                {name: 'Insegno', surname: 'Voglio', img_url: 'voglio.jpg', email: 'insegno.voglio@gmail.com', telephone: '03261234567'},
                                {name: 'Ami', surname: 'Origa', img_url: 'origa.jpg', email: 'ami.origa@gmail.com', telephone: '73361234567'}])
-
-SchoolYear.delete_all
-school_years = SchoolYear.create([{year: '1'},{year: '2'},{year: '3'},{year: '4'},{year: '5'}])
-
+                               
 Plan.delete_all
 plans = Plan.create([{subject_id: subjects[0].id, school_year_id: school_years[0].id, program: "Teorica delle quattro operazioni sui numeri interi. Teoremi fondamentali sulla divisibilità dei numeri interi: sui numeri primi - Massimo comun divisore e minimo multiplo comune di due o più numeri. Teorica delle frazioni ordinarie – riduzione delle frazioni ordinarie in decimali."},
                      {subject_id: subjects[0].id, school_year_id: school_years[1].id, program: "Costanti e variabili; prenozioni sui limiti. Numeri decimali periodici e loro frazioni generatrici. Nozioni sui numeri irrazionali e sulle operazioni ad essi relative. Regola per l'estrazione della radice quadrata dai numeri interi e frazionari. Calcolo dei radicali – Esponenti frazionari. Equazione generale di secondo grado ad una incognita – Discussione delle soluzioni – Relazione tra i coefficienti e le radici della equazione – esempi di equazioni riducibili al primo e al secondo grado."},
@@ -73,8 +76,66 @@ event_types = EventType.create([{name: 'Arte e storia', description: "Gli interv
 
 Event.delete_all
 events = Event.create([{name: 'Days of dinosaurs', datetime: '2014-06-03 09:00', event_type_id: event_types[0].id, structure_id: structures[0].id, participations: "All'intervento parteciperanno Marco Valenti e Massimo Brando. Marco Valenti è a capo del LIAAM (Laboratorio di Informatica Applicata all'Archeologia Medievale, Università di Siena), dirige il gruppo più avanzato in quanto a tecnologie informatiche e sue applicazioni: sono i primi a rendere pubblico tutto il materiale di scavo. È stato candidato nel 2011 all'Innovation Italy Award. Massimo Brando è uno studioso indipendente, ha creato su Facebook il frequentatissimo (ed utilissimo) gruppo 'Ceramica in Archeologia' con quasi tremila utenti, dove si chiedono pareri su frammenti di ceramica ignoti e si condividono bibliografie utili allo studioso di ogni genere archeologico.", description: "Una nuova specie di dinosauri, forse la più grande ad essere vissuta in Europa 150 milioni di anni fa, è stata scoperta in Portogallo e battezzata con il nome di Torvosaurus gurneyi. Come riportato sulla rivista scientifica statunitense Plos One, in base all’esame dei resti fossili il Torvosaurus era lungo 10 metri, carnivoro e con denti affilati come rasoi e lunghi 10 centimetri; non è in assoluto il più grande predatore conosciuto (la palma spetta a specie come il Tirannosauro) ma sicuramente uno dei più grandi carnivori terrestri del Cretaceo."},
-                       {name: 'Evento europeo per i giovani', datetime: '2014-06-09 10:00', event_type_id: event_types[1].id, structure_id: structures[2].id, participations: "Parteciperanno Mimmo Europa e Franco Usa.", description: "L'evento prevede una grande varietà di discussioni e attività, dentro e fuori il Parlamento. I partecipanti saranno invitati a partecipare a workshop, dibattiti e altre attività legate al tema 'Idee per una Europa migliore', mentre le attività culturali e sportive si terranno al di fuori del Parlamento."},
-                       {name: 'Informatica Day', datetime: '2014-06-01 09:00', event_type_id: event_types[2].id, structure_id: structures[1].id, participations: "All'intervento parteciperanno tutti i professori di informatica dell'istituto", description: "Partecipa e scoprirai: I principali cambiamenti sociali, tecnologici e di business introdotti dai Big Data e dall’Internet of Things. Il valore unico di Informatica Vibe per disegnare una infrastruttura dati scalabile che spazia dal dipartimentale all’enterprise ad Hadoop, dall’on-premise al Cloud. Come fornire ai clienti/cittadini una customer experience di successo grazie alla gestione dei dati master."}])
+                       {name: 'Evento europeo per i giovani', datetime: '2014-06-09 10:00', event_type_id: event_types[1].id, structure_id: structures[2].id, participations: "Parteciperanno Mimmo Europa e Franco Usa.", description: "L'evento prevede una grande varietà di discussioni e attività sull'Europa unita. I partecipanti saranno invitati a partecipare a workshop, dibattiti e altre attività legate al tema 'Idee per una Europa migliore', mentre le attività culturali e sportive si terranno al di fuori della scuola."},
+                       {name: 'Informatica Day', datetime: '2014-06-01 09:00', event_type_id: event_types[2].id, structure_id: structures[1].id, participations: "All'intervento parteciperanno tutti i professori di informatica dell'istituto.", description: "Partecipa e scoprirai: I principali cambiamenti sociali, tecnologici e di business introdotti dai Big Data e dall’Internet of Things. Il valore unico di Informatica Vibe per disegnare una infrastruttura dati scalabile che spazia dal dipartimentale all’enterprise ad Hadoop, dall’on-premise al Cloud. Come fornire ai clienti/cittadini una customer experience di successo grazie alla gestione dei dati master."},
+                       {name: 'Festival della Complessità', datetime: '2014-03-01 09:00', event_type_id: event_types[2].id, structure_id: structures[0].id, participations: "All'intervento parteciperanno Carlo Costa e Redmond Red.", description: "La V edizione del Festival della Complessità ha un’impostazione 'sistemica'. Il Festival stesso è una metafora della complessità. È infatti un sistema che emerge grazie al contributo di decine di Partner Promotori, che da maggio a luglio, proporranno l’approccio sistemico in decine e decine di eventi, in una ventina di scuole."}])
 
 events[0].subjects << Subject.where("name = 'Storia' or name = 'Scienze'")
-events[2].subjects << Subject.where("name = 'Trattamento testirails'")
+events[1].subjects << Subject.where("name = 'Italiano'")
+events[2].subjects << Subject.where("name = 'Trattamento testi'")
+events[3].subjects << Subject.where("name = 'Scienze'")
+
+Course.delete_all
+courses = Course.create([{name: '1A', school_year_id: school_years[0].id, location: "Piano 1, aula numero 10", books: "La matematica è con noi - Zanichelli. History - LaStoriaEditori. - Geo - Mondadori. GrammaticaItaliana - LaCarta.", extra_materials: "Per approfondimenti si può far riferimento al sito del professore Amaldo www.amaldo.it"},
+                         {name: '2A', school_year_id: school_years[1].id, location: "Piano terra, aula numero 3", books: "Math - Zanichelli. Geo - Mondadori. LaStoria - Mondadori. LinguaItaliana - LaCarta.", extra_materials: "I professori consigliano l'acquisto del libro di inglese EnglishPlus e il libro di matematica Math3."},
+                         {name: '3A', school_year_id: school_years[2].id, location: "Piano 2, aula numero 15", books: "Operazioni - BookEditor. MondoPlus - Zanichelli. LaVeritàStorica - LaCarta. ItaPlus - Zanichelli.", extra_materials: ""},
+                         {name: '1B', school_year_id: school_years[0].id, location: "Piano 1, aula numero 9", books: "Matematicamente - Zanichelli. La Terra - Esculapio. History - LaStoriaEditori. Italiano&Grammatica - Mondadori.", extra_materials: "I professori consigliano l'acquisto del libro di italiano TuttoPlus."},
+                         {name: '2B', school_year_id: school_years[1].id, location: "Piano 2, aula numero 12", books: "Results - Zanichelli. Giriamo - Mondadori. LaStoria - Mondadori. LinguaItaliana - LaCarta.", extra_materials: "La professoressa Cabotto è disponibile per lezioni di approfondimento individuali."},
+                         {name: '3B', school_year_id: school_years[2].id, location: "Piano 2, aula numero 16", books: "Math3 - Zanichelli. Geo - Mondadori. History - LaStoriaEditori. LinguaItaliana - LaCarta.", extra_materials: "I professori consigliano l'acquisto del libro di inglese EnglishPlus e il libro di matematica Math3."}])
+ 
+subjects[0].courses << Course.where("name = '1A' or name = '2A' or name = '3A' or name = '1B' or name = '2B' or name = '3B'")
+subjects[1].courses << Course.where("name = '1A' or name = '2A' or name = '3A' or name = '1B' or name = '2B' or name = '3B'")
+subjects[2].courses << Course.where("name = '1A' or name = '2A' or name = '3A' or name = '1B' or name = '2B' or name = '3B'")
+subjects[3].courses << Course.where("name = '1A' or name = '2A' or name = '3A' or name = '1B' or name = '2B' or name = '3B'")
+subjects[4].courses << Course.where("name = '1A' or name = '1B'")
+subjects[5].courses << Course.where("name = '1A' or name = '1B'")
+subjects[6].courses << Course.where("name = '1A' or name = '2A' or name = '1B' or name = '2B'")
+
+Schedule.delete_all
+schedules = Schedule.create([{course_id: courses[0].id, school_day_id: school_days[0].id, lessons: "8:30 - 9:30 Religione / Pia Carla 9:30 - 11:30 Educazione fisica / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[0].id, school_day_id: school_days[1].id, lessons: "8:30 - 10:30 Diritto ed economia / Motta Concetta 10:30 - 12:30 Scienze della natura / Nata Lucia 11:30 - 13:30 Scienze della materia / Mate Grazia"},
+                             {course_id: courses[0].id, school_day_id: school_days[2].id, lessons: "8:30 - 11:30 Scienze della materia / Mate Grazia 11:30 - 13:30 Trattamento testi / Signa Giovanna"},
+                             {course_id: courses[0].id, school_day_id: school_days[3].id, lessons: "8:30 - 9:30 Matematica / Luca Amaldo /n 9:30 - 11:30 Inglese / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[0].id, school_day_id: school_days[4].id, lessons: "8:30 - 9:30 Italiano / Pia Carla 9:30 - 11:30 Scienze della natura / Canesso Luca 11:30 - 13:30 Inglese / Cristina Cabotto"},
+                             {course_id: courses[1].id, school_day_id: school_days[0].id, lessons: "8:30 - 9:30 Religione / Pia Carla 9:30 - 11:30 Educazione fisica / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[1].id, school_day_id: school_days[1].id, lessons: "8:30 - 10:30 Diritto ed economia / Motta Concetta 10:30 - 12:30 Scienze della natura / Nata Lucia 11:30 - 13:30 Scienze della materia / Mate Grazia"},
+                             {course_id: courses[1].id, school_day_id: school_days[2].id, lessons: "8:30 - 11:30 Scienze della materia / Mate Grazia 11:30 - 13:30 Trattamento testi / Signa Giovanna"},
+                             {course_id: courses[1].id, school_day_id: school_days[3].id, lessons: "8:30 - 9:30 Matematica / Luca Amaldo 9:30 - 11:30 Inglese / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[1].id, school_day_id: school_days[4].id, lessons: "8:30 - 9:30 Italiano / Pia Carla 9:30 - 11:30 Scienze della natura / Canesso Luca 11:30 - 13:30 Inglese / Cristina Cabotto"},
+                             {course_id: courses[2].id, school_day_id: school_days[0].id, lessons: "8:30 - 9:30 Religione / Pia Carla 9:30 - 11:30 Educazione fisica / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[2].id, school_day_id: school_days[1].id, lessons: "8:30 - 10:30 Diritto ed economia / Motta Concetta 10:30 - 12:30 Scienze della natura / Nata Lucia 11:30 - 13:30 Scienze della materia / Mate Grazia"},
+                             {course_id: courses[2].id, school_day_id: school_days[2].id, lessons: "8:30 - 11:30 Scienze della materia / Mate Grazia 11:30 - 13:30 Trattamento testi / Signa Giovanna"},
+                             {course_id: courses[2].id, school_day_id: school_days[3].id, lessons: "8:30 - 9:30 Matematica / Luca Amaldo 9:30 - 11:30 Inglese / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[2].id, school_day_id: school_days[4].id, lessons: "8:30 - 9:30 Italiano / Pia Carla 9:30 - 11:30 Scienze della natura / Canesso Luca 11:30 - 13:30 Inglese / Cristina Cabotto"},
+                             {course_id: courses[3].id, school_day_id: school_days[0].id, lessons: "8:30 - 9:30 Religione / Pia Carla 9:30 - 11:30 Educazione fisica / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[3].id, school_day_id: school_days[1].id, lessons: "8:30 - 10:30 Diritto ed economia / Motta Concetta 10:30 - 12:30 Scienze della natura / Nata Lucia 11:30 - 13:30 Scienze della materia / Mate Grazia"},
+                             {course_id: courses[3].id, school_day_id: school_days[2].id, lessons: "8:30 - 11:30 Scienze della materia / Mate Grazia 11:30 - 13:30 Trattamento testi / Signa Giovanna"},
+                             {course_id: courses[3].id, school_day_id: school_days[3].id, lessons: "8:30 - 9:30 Matematica / Luca Amaldo 9:30 - 11:30 Inglese / Canesso Luca /n 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[3].id, school_day_id: school_days[4].id, lessons: "8:30 - 9:30 Italiano / Pia Carla 9:30 - 11:30 Scienze della natura / Canesso Luca 11:30 - 13:30 Inglese / Cristina Cabotto"},
+                             {course_id: courses[4].id, school_day_id: school_days[0].id, lessons: "8:30 - 9:30 Religione / Pia Carla 9:30 - 11:30 Educazione fisica / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[4].id, school_day_id: school_days[1].id, lessons: "8:30 - 10:30 Diritto ed economia / Motta Concetta 10:30 - 12:30 Scienze della natura / Nata Lucia 11:30 - 13:30 Scienze della materia / Mate Grazia"},
+                             {course_id: courses[4].id, school_day_id: school_days[2].id, lessons: "8:30 - 11:30 Scienze della materia / Mate Grazia 11:30 - 13:30 Trattamento testi / Signa Giovanna"},
+                             {course_id: courses[4].id, school_day_id: school_days[3].id, lessons: "8:30 - 9:30 Matematica / Luca Amaldo 9:30 - 11:30 Inglese / Canesso Luca 11:30 - 13:30 Economia aziendale / Motta Concetta"},
+                             {course_id: courses[4].id, school_day_id: school_days[4].id, lessons: "8:30 - 9:30 Italiano / Pia Carla 9:30 - 11:30 Scienze della natura / Canesso Luca 11:30 - 13:30 Inglese / Cristina Cabotto"}])
+                       
+Meeting.delete_all
+meetings = Meeting.create([{datetime: '2014-06-03 09:00', location: 'aula 9', course_id: courses[0].id},
+                           {datetime: '2014-02-07 09:00', location: 'aula 10', course_id: courses[0].id},
+                           {datetime: '2014-05-03 09:00', location: 'aula 7', course_id: courses[1].id},
+                           {datetime: '2014-02-07 09:00', location: 'aula 10', course_id: courses[1].id}])
+
+meetings[0].professors << Professor.where("surname = 'Binetti' or surname = 'Veloce' ")
+meetings[1].professors << Professor.where("surname = 'Binetti' or surname = 'Cabotto' ")
+meetings[2].professors << Professor.where("surname = 'Amaldo' or surname = 'Veloce' ")
+meetings[3].professors << Professor.where("surname = 'Origa' or surname = 'Veloce' or surname = 'Cabotto'")
+

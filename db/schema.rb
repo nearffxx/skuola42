@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605171536) do
+ActiveRecord::Schema.define(version: 20140606204108) do
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "books"
+    t.string   "extra_materials"
+    t.integer  "school_year_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses_subjects", force: true do |t|
+    t.integer "course_id"
+    t.integer "subject_id"
+  end
 
   create_table "event_types", force: true do |t|
     t.string   "name"
@@ -34,6 +49,19 @@ ActiveRecord::Schema.define(version: 20140605171536) do
   create_table "events_subjects", force: true do |t|
     t.integer "event_id"
     t.integer "subject_id"
+  end
+
+  create_table "meetings", force: true do |t|
+    t.datetime "datetime"
+    t.string   "location"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meetings_professors", force: true do |t|
+    t.integer "meeting_id"
+    t.integer "professor_id"
   end
 
   create_table "plans", force: true do |t|
@@ -59,8 +87,22 @@ ActiveRecord::Schema.define(version: 20140605171536) do
     t.integer "subject_id"
   end
 
+  create_table "schedules", force: true do |t|
+    t.integer  "course_id"
+    t.integer  "school_day_id"
+    t.text     "lessons"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "school_days", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "school_years", force: true do |t|
-    t.integer  "year"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

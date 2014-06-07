@@ -1,0 +1,35 @@
+<section id = "ida_courses">
+	<h1>CLASSI DELL'ISTITUTO</h1>
+
+	<p class = "ida_description">Da qui si possono raggiungere le informazioni pratiche e didattiche di tutte le classi dell' istituto.</p>
+	
+	<div id = "list_courses">
+		<h3>PRIME SEZIONI</h3>
+    	<% @first_year_courses.each do |c| %>
+           		<%= link_to c.name, course_path(c) %> |
+    	<% end %>
+  	
+  		<h3>SECONDE SEZIONI</h3>
+  		<% @second_year_courses.each do |c| %>
+           		<%= link_to c.name, course_path(c) %> |
+    	<% end %>
+  	
+  		<h3>TERZE SEZIONI</h3>
+  		<% @third_year_courses.each do |c| %>
+           		<%= link_to c.name, course_path(c) %> |
+    	<% end %>
+  	
+  
+    	<h3>QUARTE SEZIONI</h3>
+    	<% @fourth_year_courses.each do |c| %>
+           		<%= link_to c.name, course_path(c) %> |
+    	<% end %>
+  	
+
+		<h3>QUINTE SEZIONI</h3>
+		<% @fifth_year_courses.each do |c| %>
+           		<%= link_to c.name, course_path(c) %> |
+    	<% end %>
+  	
+	</div>
+</section>
