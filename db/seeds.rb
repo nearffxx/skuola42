@@ -7,12 +7,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-SchoolYear.delete_all
-school_years = SchoolYear.create([{name: '1'},{name: '2'},{name: '3'},{name: '4'},{name: '5'}])
-
-SchoolDay.delete_all
-school_days = SchoolDay.create([{name: 'Lunedì'},{name: 'Martedì'},{name: 'Mercoledì'},{name: 'Giovedì'},{name: 'Venerdì'}])
-
 Subject.delete_all
 subjects = Subject.create([{name: 'Matematica', img_url: 'matematica.jpg', description: "L'obiettivo è aiutare i ragazzi a riflettere su problemi analitici. Col termine matematica si designa la disciplina (ed il relativo corpo di conoscenze) che studia problemi concernenti quantità, estensioni e figure spaziali, movimenti di corpi, e tutte le strutture che permettono di trattare questi aspetti in modo generale. La matematica fa largo uso degli strumenti della logica e sviluppa le proprie conoscenze nel quadro di sistemi ipotetico-deduttivi che, a partire da definizioni rigorose e da assiomi riguardanti proprietà degli oggetti definiti (risultati da un procedimento di astrazione, come triangoli, funzioni, vettori ecc.), raggiunge nuove certezze, per mezzo delle dimostrazioni, attorno a proprietà meno intuitive degli oggetti stessi (espresse dai teoremi)."},
                            {name: 'Storia', img_url: 'storia.jpg', description: "La storia è la materia che si occupa dello studio del passato tramite l'uso di fonti, cioè di tutto ciò che, configurandosi come documento, possa trasmettere il sapere. Più precisamente, la storia è la ricerca sui fatti del passato e il tentativo di una narrazione continua e sistematica degli stessi fatti, in quanto considerati di importanza per la specie umana; i fatti vengono di norma interpretati alla luce della visione etica propria dello storico in buona fede."},
@@ -29,7 +23,13 @@ professors = Professor.create([{name: 'Luca', surname: 'Amaldo', img_url: 'amald
                                {name: 'Guido', surname: 'Veloce', img_url: 'veloce.jpg', email: 'guido.veloce@gmail.com', telephone: '03361234567'},
                                {name: 'Insegno', surname: 'Voglio', img_url: 'voglio.jpg', email: 'insegno.voglio@gmail.com', telephone: '03261234567'},
                                {name: 'Ami', surname: 'Origa', img_url: 'origa.jpg', email: 'ami.origa@gmail.com', telephone: '73361234567'}])
-                               
+            
+SchoolYear.delete_all
+school_years = SchoolYear.create([{id: '1', name: '1'},{id: '2', name: '2'},{id: '3', name: '3'},{id: '4', name: '4'},{id: '5', name: '5'}])
+
+SchoolDay.delete_all
+school_days = SchoolDay.create([{id: '1', name: 'Lunedì'},{id: '2', name: 'Martedì'},{id: '3', name: 'Mercoledì'},{id: '4', name: 'Giovedì'},{id: '5', name: 'Venerdì'}])
+                   
 Plan.delete_all
 plans = Plan.create([{subject_id: subjects[0].id, school_year_id: school_years[0].id, program: "Teorica delle quattro operazioni sui numeri interi. Teoremi fondamentali sulla divisibilità dei numeri interi: sui numeri primi - Massimo comun divisore e minimo multiplo comune di due o più numeri. Teorica delle frazioni ordinarie – riduzione delle frazioni ordinarie in decimali."},
                      {subject_id: subjects[0].id, school_year_id: school_years[1].id, program: "Costanti e variabili; prenozioni sui limiti. Numeri decimali periodici e loro frazioni generatrici. Nozioni sui numeri irrazionali e sulle operazioni ad essi relative. Regola per l'estrazione della radice quadrata dai numeri interi e frazionari. Calcolo dei radicali – Esponenti frazionari. Equazione generale di secondo grado ad una incognita – Discussione delle soluzioni – Relazione tra i coefficienti e le radici della equazione – esempi di equazioni riducibili al primo e al secondo grado."},
