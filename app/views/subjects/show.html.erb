@@ -17,7 +17,7 @@
   		<%= link_to 'Eventi in cui è argomento', show_events_subject_path(@subject) %> </br>
   		<%= link_to 'Professori che la insegnano', show_professors_subject_path(@subject) %> </br>
   		<%= link_to 'Classi in cui viene insegnata', show_courses_subject_path(@subject) %> </br>
-  		<%= link_to "Torna al professore #{@from_professor.name}", professor_path(@from_professor_id) if @from_professor_id %> </br>
+  		<%= link_to "Torna al professore #{@from_professor.surname+' '+@from_professor.name}", professor_path(@from_professor_id) if @from_professor_id %> </br>
   		<%= link_to "Torna all'evento #{@from_event.name}", event_path(@from_event_id) if @from_event_id %> </br>
   		<%= link_to "Torna al corso #{@from_course.name}", course_path(@from_course_id) if @from_course_id %> </br>
   	</div> </br>

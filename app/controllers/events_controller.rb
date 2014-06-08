@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   
   def index_types
     @type = EventType.find(params[:id])
-    @events = Event.where(event_type_id: @type.id)
+    @events = Event.where(event_type_id: @type.id).order(datetime: :asc)
   end
   
   def show

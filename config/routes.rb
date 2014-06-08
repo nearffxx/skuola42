@@ -1,6 +1,7 @@
 Skuola42::Application.routes.draw do
   root to: "home#index"
-  match 'home' => 'home#index', via: :get
+  match 'home' => 'home#index', via: :get 
+  match 'editorial' => 'editorial#index', via: :get, as: :editorials
   get 'school/index'
   get 'school/show_missions'
   get 'school/show_rules'
@@ -15,7 +16,11 @@ Skuola42::Application.routes.draw do
     end
   end
   
-  resources :professors, only: [:index, :show]
+  resources :professors, only: [:index, :show, :new, :create] do
+    member do
+      get 'show_meetings'
+    end
+  end
   
   resources :structures, only: [:index, :show] do
     member do
@@ -36,7 +41,7 @@ Skuola42::Application.routes.draw do
     end
   end
   
-  resources :meetings, only: [:index, :show]
+  resources :meetings, only: [:index, :show, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

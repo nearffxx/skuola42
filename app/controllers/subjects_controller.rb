@@ -37,7 +37,7 @@ class SubjectsController < ApplicationController
   
   def show_courses
     @subject = Subject.find(params[:id])
-    @courses = @subject.courses.order(name: :asc)
+    @courses = @subject.courses.order(school_year_id: :asc, name: :asc)
   end
   
   def init_topic

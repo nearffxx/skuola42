@@ -1,0 +1,18 @@
+<h1>Inserisci un nuovo incontro</h1>
+
+<%= form_for @meeting do |m| %>
+    <%= m.label 'Data' %> <br>
+    <%= m.datetime_select :datetime %> <br>
+    
+    <%= m.label "Luogo" %> <br>
+    <%= m.text_area :location %> <br>
+    
+    <%= m.label :course_id, 'Classe' %> <br>
+    <%= collection_select :meeting, :course_id, @courses, :id, :name %> <br>
+
+    <%= m.label "Professori che partecipano" %> <br>
+    <%= collection_select :meeting, :professor_ids, @professors, :id, :name, {selected: @professor_ids}, {multiple: true} %> <br>
+
+    <%= m.submit %>
+
+<% end %>

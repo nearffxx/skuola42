@@ -18,7 +18,8 @@
     	<% end %>
   	</div> </br>
   	
-  	<div class = "transition_link">	
+  	<div class = "transition_link">
+  		<%= link_to 'Incontri', show_meetings_professor_path(@professor) %> </br>
   		<%= link_to "Torna ai professori di #{@from_subject.name}", show_professors_subject_path(@from_subject_id) if @from_subject_id %> </br>
   		<%= link_to "Torna all'incontro del #{@from_meeting.datetime.to_formatted_s(:short)}", meeting_path(@from_meeting_id) if @from_meeting_id %> </br>
   	</div>

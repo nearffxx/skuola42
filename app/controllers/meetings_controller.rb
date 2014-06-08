@@ -10,6 +10,34 @@ class MeetingsController < ApplicationController
 
   def show
     init_topic
+    init_from_page
+  end
+  
+  def new
+    @meeting = Meeting.new
+    @professors = Professor.order(surname: :asc)
+    @courses = Course.order(name: :asc)
+  end
+  
+  def create
+    params[:meeting][:professor_ids].delete("")
+    professor_ids = params[:meeting][:professor_ids]
+    professors = Professor.find(professor_ids)
+    params[:meeting].delete(:professor_ids)
+    meeting = Meeting.create(meeting_params)
+    meeting.professors << professors
+    redirect_to editorials_path
+  end
+  
+  def init_topic
+    @meeting = Meeting.find(params[:id])
+    @course = @meeting.course
+    @professors = @meeting.professors
+  end
+  
+  def init_from_page
+    @from_professor_id = params[:from_professor]
+    @from_professor = Professor.find(@from_professor_id) if @from_professor_id
   end
   
   private
@@ -21,13 +49,12 @@ class MeetingsController < ApplicationController
         hash_course_meetings[c.name] = meetings if !meetings.empty?
       end
     end
-    
     return hash_course_meetings
   end
   
-  def init_topic
-    @meeting = Meeting.find(params[:id])
-    @course = @meeting.course
-    @professors = @meeting.professors
+  private
+  def meeting_params
+    params.require(:meeting).permit(:datetime, :location, :course_id)
   end
+  
 end
