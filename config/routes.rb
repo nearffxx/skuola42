@@ -2,6 +2,7 @@ Skuola42::Application.routes.draw do
   root to: "home#index"
   match 'home' => 'home#index', via: :get 
   match 'editorial' => 'editorial#index', via: :get, as: :editorials
+  match 'error_editorial' => 'editorial#error', via: :get, as: :error_editorial
   get 'school/index'
   get 'school/show_missions'
   get 'school/show_rules'
@@ -22,13 +23,13 @@ Skuola42::Application.routes.draw do
     end
   end
   
-  resources :structures, only: [:index, :show] do
+  resources :structures, only: [:index, :show, :new, :create] do
     member do
       get 'show_events'
     end
   end
   
-  resources :events, only: [:index, :show] do
+  resources :events, only: [:index, :show, :new, :create] do
     member do
       get 'index_types'
       get 'show_practical_info'

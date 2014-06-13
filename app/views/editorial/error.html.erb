@@ -1,0 +1,20 @@
+<h1>Errore nell'inserimento dati</h1>
+
+<section id = "error_section">
+	<div class = "errors">
+		<ul>
+    		<% @errors.each do |a, errors| %>
+        		<li class = "bullet">
+        			<%= a + ': '%>
+        			<% errors.each do |e| %>
+        				<%= e %>
+        			<% end %>
+        		</li>
+    		<% end %>
+  		</ul>
+	</div>
+
+	<div class = "transition_link">
+   		<%= link_to 'Torna indietro', :back %>
+	</div>
+</section>

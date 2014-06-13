@@ -22,16 +22,19 @@ class ProfessorsController < ApplicationController
     image = params[:professor][:img_url]
     File.open(Rails.root.join('public','professors', image.original_filename), 'wb') do |file|
       file.write(image.read)
-    end
-    params[:professor][:img_url] = image.original_filename
-    
+    end if image
+    params[:professor][:img_url] = image.original_filename if image
     params[:professor][:subject_ids].delete("")
     subject_ids = params[:professor][:subject_ids]
     subjects = Subject.find(subject_ids)
     params[:professor].delete(:subject_ids)
     professor = Professor.create(professor_params)
-    professor.subjects << subjects
-    redirect_to editorials_path
+    if professor.errors.any?
+      redirect_to error_editorial_path(errors: professor.errors.messages)
+    else
+      professor.subjects << subjects
+      redirect_to editorials_path
+    end
   end
   
   def init_topic

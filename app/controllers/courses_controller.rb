@@ -26,4 +26,5 @@ class CoursesController < ApplicationController
     @from_subject_id = params[:from_subject]
     @from_subject = Subject.find(@from_subject_id) if @from_subject_id
   end
+  
 end

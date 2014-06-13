@@ -1,0 +1,28 @@
+<h1>Inserisci un nuovo evento</h1>
+
+<section class = 'form_section'>
+	<%= form_for @event do |e| %>
+		<%= e.label 'Data' %> <br>
+    	<%= e.datetime_select :datetime %> <br>
+    
+    	<%= e.label 'Nome' %> <br>
+    	<%= e.text_field :name %> <br>
+    
+   		<%= e.label 'Descrizione' %> <br>
+   		<%= e.text_field :description %> <br>
+    
+    	<%= e.label "Interventi" %> <br>
+    	<%= e.text_field :participations %> <br>
+   
+    	<%= e.label 'Tipo di evento' %> <br>
+    	<%= collection_select :event, :event_type_id, @event_types, :id, :name %> <br>
+
+		<%= e.label "Struttura che ospita l'evento" %> <br>
+    	<%= collection_select :event, :structure_id, @structures, :id, :name %> <br>
+    	
+    	<%= e.label "Materie collegate" %> <br>
+    	<%= collection_select :event, :subject_ids, @subjects, :id, :name, {selected: @subject_ids}, {multiple: true} %> <br>
+
+    	<%= e.submit %>
+	<% end %>
+</section>

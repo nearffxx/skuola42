@@ -25,8 +25,12 @@ class MeetingsController < ApplicationController
     professors = Professor.find(professor_ids)
     params[:meeting].delete(:professor_ids)
     meeting = Meeting.create(meeting_params)
-    meeting.professors << professors
-    redirect_to editorials_path
+    if meeting.errors.any?
+      redirect_to error_editorial_path(errors: meeting.errors.messages)
+    else
+      meeting.professors << professors
+      redirect_to editorials_path
+    end
   end
   
   def init_topic
