@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Skuola42</title>
+  <title>Skuola42 | <%= yield(:title) => </title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,7 +11,7 @@
 	<h1> <%= link_to "SKUOLA 42", home_path  %></h1>
   	<nav>
   		<ul>
-  			<h4>BENVENUTO</h4>	
+  			<h4>BENVENUTO</h4>
       		<li>
         		<%= link_to 'Storia e tradizione', school_index_path %>
       		</li>
