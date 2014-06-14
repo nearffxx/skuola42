@@ -10,6 +10,83 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
+
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+header {
+
+}
+
+.group {
+}
+
+nav {
+  float: left;
+}
+
+section {
+  margin-left: 60px;
+}
+
+footer {
+  text-align: center;
+  clear: left;
+}
+
+label,
+ul {
+  border: 1px solid #cecfd5;
+  border-radius: 6px;
+}
+label {
+  color: #0087cc;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px 9px;
+  transition: all .15s ease;
+}
+nav {
+
+}
+ul {
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 0;
+  width: 100px;
+}
+li.vertical {
+  border-bottom: 1px solid #cecfd5;
+}
+li.vertical:last-child {
+  border-bottom: 0;
+}
+li.horizontal {
+  display: inline;
+  border-right: 1px solid #cecfd5;
+}
+li.horizontal:last-child {
+  display: inline;
+  border-right: 0;
+}
+}
+li:hover {
+  background-color: #cecfd5;
+}
+a {
+  color: #0087cc;
+  display: inherit;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+a:hover {
+  background-color: #cecfd5;
+  color: #ff7b29;
+}
