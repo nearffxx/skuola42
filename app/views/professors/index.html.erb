@@ -1,16 +1,13 @@
-<section id = "ida_professors">
-	<h1>PROFESSORI DELL'ISTITUTO</h1>
+<h1>PROFESSORI DELL'ISTITUTO</h1>
 
-	<p class = "ida_description">Da qui è possibile raggiungere i contatti dei professori.</p>
-	
-	<div class = "group_link">
-  		<ul>
-    		<% @professors.each do |p| %>
-        		<li class = "bullet">
-           			<%= link_to p.surname+' '+p.name, professor_path(p) %>
-        		</li>
-    		<% end %>
-  		</ul>
-  	</div>
-  	
-</section>
+<p class = "ida_description">Da qui è possibile raggiungere i contatti dei professori.</p>
+  
+<div class = "group_link">
+  <ul>
+    <% @professors.each do |p| %>
+      <li class = "bullet">
+        <%= link_to p.surname+' '+p.name, professor_path(p) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

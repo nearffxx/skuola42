@@ -1,16 +1,14 @@
 <h1>Inserisci una nuova struttura</h1>
 
-<section class = 'form_section'>
-	<%= form_for @structure do |s| %>
-    	<%= s.label 'Nome' %> <br>
-    	<%= s.text_field :name %> <br>
-    
-   		<%= s.label 'Descrizione' %> <br>
-   		<%= s.text_area :description %> <br>
-    
-    	<%= s.label 'Immagine' %> <br>
-    	<%= s.file_field :img_url %> <br>
-  
-    	<%= s.submit %>
-	<% end %>
-</section>
+<%= form_for @structure do |s| %>
+  <%= s.label 'Nome' %> <br>
+  <%= s.text_field :name %> <br>
+
+    <%= s.label 'Descrizione' %> <br>
+    <%= s.text_area :description %> <br>
+
+  <%= s.label 'Immagine' %> <br>
+  <%= s.file_field :img_url %> <br>
+
+  <%= s.submit %>
+<% end %>

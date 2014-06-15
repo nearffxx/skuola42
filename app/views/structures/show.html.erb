@@ -1,19 +1,17 @@
-<section id="structure_topic">
-	<h1>STRUTTURA: <%= @structure.name %></h1>
-	
-	<div class = "image">
-    	<%= image_tag("/structures/#{@structure.img_url}") %>
-   	</div>
+<h1>STRUTTURA: <%= @structure.name %></h1>
 
-	<p class = "description_topic"><%= @structure.description %></p>
-	
-	<div class = "transition_link">
-  		<%= link_to 'Eventi ospitati', show_events_structure_path(@structure) %> </br>
-  	</div>
-  	
-  	<div class = "group_link">	
-  		<%= link_to 'Tutte le strutture', structures_path %> </br>
-  		<%= link_to "<<Prev", structure_path(@structures[@prev].id) if @prev %>
-  		<%= link_to "Next>>", structure_path(@structures[@next].id) if @next %>
-  	</div>
-</section>
+<div class = "image">
+	<%= image_tag("/structures/#{@structure.img_url}") %>
+</div>
+
+<p class = "description_topic"><%= @structure.description %></p>
+
+<div class = "transition_link">
+	<%= link_to 'Eventi ospitati', show_events_structure_path(@structure) %> </br>
+</div>
+
+<div class = "group_link">	
+	<%= link_to 'Tutte le strutture', structures_path %> </br>
+	<%= link_to "<<Prev", structure_path(@structures[@prev].id) if @prev %>
+	<%= link_to "Next>>", structure_path(@structures[@next].id) if @next %>
+</div>

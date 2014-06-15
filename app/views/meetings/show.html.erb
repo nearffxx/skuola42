@@ -1,24 +1,22 @@
-<section id="meeting_topic">
-	<h1>INCONTRI CLASSE <%= @course.name %></h1>
-	
-	<p class = "short_line">Data, ora e aula: <%= @meeting.datetime.to_formatted_s(:short) + ' ' + @meeting.location %></p>
-	
-	<div id = "meeting_professors">
-		<h4>Professori che partecipano</h4>
-		<ul>
-    		<% @professors.each do |p| %>
-        		<li class = "bullet">
-           			<%= link_to p.name+' '+p.surname, professor_path(p, from_meeting: @meeting) %>
-        		</li>
-    		<% end %>
-  		</ul>
-  	</div> </br>
-  	
-  	<div class = "transition_link">	
-  		<%= link_to "Torna agli incontri di #{@from_professor.name+' '+@from_professor.surname}", show_meetings_professor_path(@from_professor_id) if @from_professor_id %> </br>
-  	</div>
+<h1>INCONTRI CLASSE <%= @course.name %></h1>
 
-  	<div class="group_link">
-  		<%= link_to 'Incontri per classe', meetings_path %> </br>
-  	</div>
-</section>
+<p class="short_line">Data, ora e aula: <%= @meeting.datetime.to_formatted_s(:short) + ' ' + @meeting.location %></p>
+
+<div id="meeting_professors">
+  <h4>Professori che partecipano</h4>
+  <ul>
+    <% @professors.each do |p| %>
+      <li class="bullet">
+        <%= link_to p.name+' '+p.surname, professor_path(p, from_meeting: @meeting) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="transition_link"> 
+  <%= link_to "Torna agli incontri di #{@from_professor.name+' '+@from_professor.surname}", show_meetings_professor_path(@from_professor_id) if @from_professor_id %>
+</div>
+
+<div class="group_link">
+  <%= link_to 'Incontri per classe', meetings_path %> </br>
+</div>

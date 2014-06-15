@@ -14,8 +14,7 @@
 
  */
 
-
-* {
+{
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
@@ -53,6 +52,15 @@ label {
   padding: 5px 9px;
   transition: all .15s ease;
 }
+
+label:hover {
+  color: #ff7b29;
+}
+input:checked + label {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: #9799a7;
+}
+
 nav {
 
 }
@@ -61,6 +69,10 @@ ul {
   margin: 8px 0 0 0;
   padding: 0;
   width: 100px;
+}
+
+li {
+  border-bottom: 1px solid #cecfd5;
 }
 li.vertical {
   border-bottom: 1px solid #cecfd5;

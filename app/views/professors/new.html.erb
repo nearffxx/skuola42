@@ -1,25 +1,22 @@
 <h1>Inserisci un nuovo professore</h1>
 
-<section class = 'form_section'>
-	<%= form_for @professor do |p| %>
-    	<%= p.label 'Nome' %> <br>
-    	<%= p.text_field :name %> <br>
-    
-   		<%= p.label 'Cognome' %> <br>
-   		<%= p.text_field :surname %> <br>
-    
-    	<%= p.label "Email" %> <br>
-    	<%= p.text_field :email %> <br>
-    
-    	<%= p.label 'Telefono' %> <br>
-    	<%= p.text_field :telephone %> <br>
-   
-    	<%= p.label 'Foto' %> <br>
-    	<%= p.file_field :img_url %> <br>
-    
-    	<%= p.label 'Materie insegnate' %> <br>
-    	<%= collection_select :professor, :subject_ids, @subjects, :id, :name, {selected: @subject_ids}, {multiple: true} %> <br>
+<%= form_for @professor do |p| %>
+  <%= p.label 'Nome' %> <br>
+  <%= p.text_field :name %> <br>
 
-    	<%= p.submit %>
-	<% end %>
-</section>
+  <%= p.label 'Cognome' %> <br>
+  <%= p.text_field :surname %> <br>
+
+  <%= p.label "Email" %> <br>
+  <%= p.text_field :email %> <br>
+
+  <%= p.label 'Telefono' %> <br>
+  <%= p.text_field :telephone %> <br>
+ 
+  <%= p.label 'Foto' %> <br>
+  <%= p.file_field :img_url %> <br>
+
+  <%= p.label 'Materie insegnate' %> <br>
+  <%= collection_select :professor, :subject_ids, @subjects, :id, :name, {selected: @subject_ids}, {multiple: true} %> <br>
+  <%= p.submit %>
+<% end %>

@@ -1,19 +1,17 @@
-<section id = "ida_events_by_type">
-	<h1>EVENTI IN <%= @type.name %></h1>
-	
-	<p class = "ida_description"><%= @type.description %></p>
-	
-	<div class = "group_link">
-  		<ul>
-    		<% @events.each do |e| %>
-        		<li class = "bullet">
-           			<%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(e) %>
-        		</li>
-    		<% end %>
-  		</ul>
-  	</div>
+<h1>EVENTI IN <%= @type.name %></h1>
+
+<p class = "ida_description"><%= @type.description %></p>
+
+<div class = "group_link">
+  <ul>
+    <% @events.each do |e| %>
+      <li class = "bullet">
+        <%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(e) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
     
-    <div class = "group_link">
-  		<%= link_to "Tutti i generi di evento", events_path %> </br>
-  	</div>
-</section>
+<div class = "group_link">
+  <%= link_to "Tutti i generi di evento", events_path %> </br>
+</div>

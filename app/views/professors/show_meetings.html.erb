@@ -1,16 +1,15 @@
-<section id = "tda_meetings_professor">
-	<h1>INCONTRI A CUI PARTECIPA <%= @professor.name+' '+@professor.surname %></h1>
-	
-	<div class = "transition_link">
-  		<ul>
-    		<% @meetings.each do |m| %>
-        		<li class = "bullet">
-           			<%= link_to m.datetime.to_formatted_s(:short), meeting_path(m, from_professor: @professor) %>
-        		</li>
-    		<% end %>
-  		</ul>
-  	</div>
-    <div class = "transition_link">
-  		<%= link_to "Indietro al professore #{@professor.name+' '+@professor.surname }", professor_path(@professor) %> </br>
-  	</div>
-</section>
+<h1>INCONTRI A CUI PARTECIPA <%= @professor.name+' '+@professor.surname %></h1>
+
+<div class = "transition_link">
+  <ul>
+    <% @meetings.each do |m| %>
+        <li class = "bullet">
+            <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m, from_professor: @professor) %>
+        </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class = "transition_link">
+  <%= link_to "Indietro al professore #{@professor.name+' '+@professor.surname }", professor_path(@professor) %> </br>
+</div>

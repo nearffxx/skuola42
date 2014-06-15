@@ -1,16 +1,14 @@
-<section id = "tda_events_structure">
-	<h1>EVENTI IN <%= @structure.name %></h1>
-	
-	<div class = "transition_link">
-  		<ul>
-    		<% @events.each do |e| %>
-        		<li class = "bullet">
-           			<%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(e, from_structure: @structure) %>
-        		</li>
-    		<% end %>
-  		</ul>
-  	</div>
-    <div class = "transition_link">
-  		<%= link_to "Indietro alla struttura #{@structure.name}", structure_path(@structure) %> </br>
-  	</div>
-</section>
+<h1>EVENTI IN <%= @structure.name %></h1>
+
+<div class = "transition_link">
+  <ul>
+    <% @events.each do |e| %>
+      <li class = "bullet">
+          <%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(e, from_structure: @structure) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class = "transition_link">
+  <%= link_to "Indietro alla struttura #{@structure.name}", structure_path(@structure) %>
+</div>
