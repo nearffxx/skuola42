@@ -10,7 +10,6 @@ gnore bundler config.
 /tmp
 
 # Ignore other unneeded files.
-database.yml
 doc/
 *.swp
 *~
