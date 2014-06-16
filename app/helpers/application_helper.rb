@@ -9,4 +9,11 @@ module ApplicationHelper
       @next = @index + 1
     end
   end
+  
+  def full_title(title) {
+    @SKUOLA42 = "Skuola42"
+  if(title.empty?)
+    return @SKUOLA42
+  else
+    return "#{SKUOLA42} | #{title}"
 end
