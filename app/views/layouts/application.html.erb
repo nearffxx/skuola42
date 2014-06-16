@@ -2,96 +2,23 @@
 <html>
 <head>
   <title>Skuola42 | <%= yield(:title) %> </title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <% csrf_meta_tags %>
 </head>
 <body>
 
-<header>
-  <%= image_tag("home_header.gif", alt: "Logo Scuola") %>
-</header>
-<div id = "landmarks">
-	<h1> <%= link_to "SKUOLA 42", home_path  %></h1>
-  	<nav>
-  		<ul>
-  			<h4>BENVENUTO</h4>
-      		<li>
-        		<%= link_to 'Storia e tradizione', school_index_path %>
-      		</li>
-      		<li>
-        		<%= link_to 'Missione e principi', school_show_missions_path %>
-      		</li>
-      		<li>
-        		<%= link_to 'Regole generali', school_show_rules_path %>
-      		</li>
-      		<li>
-        		<%= link_to 'Associazione genitori', school_show_association_path %>
-      		</li>
-  			<h4>UTILITA'</h4>	
-      		<li>
-        		<%= link_to 'Strutture', structures_path %>
-      		</li>
-  	  		<h4>DIDATTICA</h4>	
-  	  		<li>
-        		<%= link_to 'Classi', courses_path %>
-      		</li>
-      		<li>
-        		<%= link_to 'Materie', subjects_path %>
-      		</li>
-      		<li>
-        		<%= link_to 'Professori', professors_path %> 
-      		</li>
-      		<li>
-        		<%= link_to 'Eventi', events_path %> 
-      		</li>
-      		<li>
-        		<%= link_to 'Incontri', meetings_path %> 
-      		</li>
-    	</ul>
-  	</nav>
-</div>
+<div id="page_wrap">
+  <header>
+    <h1 id="home_title"> <%= link_to "SKUOLA 42", home_path  %></h1>
+    <%= image_tag("home_header.gif", alt: "Logo Scuola", id: "header_sito") %>
+  </header>
 
-<div class="group">
-  <nav>
-    <ul>
-      <h4>BENVENUTO</h4>  
-      <li class=vertical>
-        <%= link_to 'Storia e tradizione', school_index_path %>
-      </li>
-      <li class=vertical>
-        <%= link_to 'Missione e principi', school_show_missions_path %>
-      </li>
-      <li class=vertical>
-        <%= link_to 'Regole generali', school_show_rules_path %>
-      </li>
-      <li class=vertical>
-        <%= link_to 'Associazione genitori', school_show_association_path %>
-      </li>
-      <h4>UTILITA'</h4> 
-      <li class=vertical>
-        <%= link_to 'Strutture', structures_path %>
-      </li>
-      <h4>DIDATTICA</h4>  
-      <li class=vertical>
-        <%= link_to 'Classi', courses_path %>
-      </li>
-      <li class=vertical>
-        <%= link_to 'Materie', subjects_path %>
-      </li>
-      <li class=vertical>
-        <%= link_to 'Professori', professors_path %> 
-      </li>
-      <li class=vertical>
-        <%= link_to 'Eventi', events_path %> 
-      </li>
-      <li class=vertical>
-        <%= link_to 'Incontri', meetings_path %> 
-      </li>
-    </ul>
-  </nav>
-  <section>
-    <%= yield %>
-  </section>
+  <div id="container">
+    <%= render 'layouts/landmarks' %>
+    <section id="container2">
+      <%= yield %>
+    </section>
+  </div>
 </div>
 
 <footer>
