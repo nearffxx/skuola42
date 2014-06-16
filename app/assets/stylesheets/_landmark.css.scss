@@ -23,25 +23,3 @@
     }
   }
 }
-
-.x {
-  margin: 0.5em 0.5em 0.5em 0.5em;
-  ul {
-    list-style: none;
-    margin: 8px 0 0 0;
-    padding: 0;
-    width: 140px;
-    li {
-      display: inline;
-      border-right: 1px solid #cecfd5;
-      &:last-child {
-        display: inline;
-        border-right: 0;
-      }
-      a:hover {
-        background-color: #cecfd5;
-        color: #ff7b29;
-      }
-    }
-  }
-}
