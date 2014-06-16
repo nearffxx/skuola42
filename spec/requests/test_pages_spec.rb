@@ -1,4 +1,4 @@
-require 'rails_helper'
+
 
 describe "TestPages", :type => :request do
   describe "GET /test_pages" do
