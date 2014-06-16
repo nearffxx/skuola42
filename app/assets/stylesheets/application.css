@@ -10,95 +10,36 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-
-
+ *= require_self
+ *= require_tree
  */
 
-{
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
+#container {
+  max-width: 1000px;
+  padding: 0.5em;
+  clear: both;
 }
 
-header {
-
-}
-
-.group {
-}
-
-nav {
+#container2 {
+  margin: 0.2em 1em 1em 1em;
   float: left;
+  width: 800px;
+  margin-right: auto;
 }
 
-section {
-  margin-left: 60px;
+#home_title {
+  font-family: "Brush Script MT", cursive;
+  float: left;
+  margin: 2em 0.5em 2em 0;
 }
 
-footer {
-  text-align: center;
-  clear: left;
+#page_wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  box-shadow: 0px 10px 20px 3px #d3d3d3;
 }
 
-label,
-ul {
-  border: 1px solid #cecfd5;
-  border-radius: 6px;
-}
-label {
-  color: #0087cc;
-  display: inline-block;
-  font-size: 18px;
-  padding: 5px 9px;
-  transition: all .15s ease;
-}
-
-label:hover {
-  color: #ff7b29;
-}
-input:checked + label {
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
-  color: #9799a7;
-}
-
-nav {
-
-}
-ul {
-  list-style: none;
-  margin: 8px 0 0 0;
-  padding: 0;
-  width: 100px;
-}
-
-li {
-  border-bottom: 1px solid #cecfd5;
-}
-li.vertical {
-  border-bottom: 1px solid #cecfd5;
-}
-li.vertical:last-child {
-  border-bottom: 0;
-}
-li.horizontal {
-  display: inline;
-  border-right: 1px solid #cecfd5;
-}
-li.horizontal:last-child {
-  display: inline;
-  border-right: 0;
-}
-}
-li:hover {
-  background-color: #cecfd5;
-}
-a {
-  color: #0087cc;
-  display: inherit;
-  padding: 6px 12px;
-  text-decoration: none;
-}
-a:hover {
-  background-color: #cecfd5;
-  color: #ff7b29;
+#header_sito {
+  margin: 2em 0;
 }
