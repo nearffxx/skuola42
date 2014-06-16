@@ -1,0 +1,22 @@
+<h1>Inserisci una nuova attività</h1>
+
+<section class = 'form_section'>
+	<%= form_for @activity do |a| %>
+    	<%= a.label 'Nome' %> <br>
+    	<%= a.text_field :name %> <br>
+    
+   		<%= a.label 'Descrizione' %> <br>
+   		<%= a.text_field :description %> <br>
+    
+    	<%= a.label "Modalità" %> <br>
+    	<%= a.text_field :modality %> <br>
+    	
+    	<%= a.label 'Immagine' %> <br>
+  		<%= a.file_field :img_url %> <br>
+   
+		<%= a.label "Professore che coordina l'attivita" %> <br>
+    	<%= collection_select :activity, :professor_id, @professors, :id, :surname %> <br>
+    	
+    	<%= a.submit %>
+	<% end %>
+</section>

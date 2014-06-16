@@ -1,0 +1,24 @@
+<section id = "activity_topic">
+	<h1>ATTIVITA' EXTRA: <%= @activity.name %></h1>
+
+	<div class = "image">
+    	<%= image_tag("/activities/#{@activity.img_url}") %>
+  	</div>
+  
+	<p class = "description_topic"><%= @activity.description %></p>
+	
+	<div class = "structural_link">
+  		<%= link_to 'Modalità', show_modality_activity_path(@activity) %> </br>
+  	</div> </br>
+  	
+  	<div class = "transition_link">
+  		<%= link_to "Professore responsabile dell'attività", professor_path(@professor, from_activity: @activity) %> </br>
+		<%= link_to "Torna al professore #{@from_professor.surname+' '+@from_professor.name}", professor_path(@from_professor_id) if @from_professor_id %> </br>
+  	</div> </br>
+  	
+  	<div class = "group_link">
+  		<%= link_to "Tutte le attività", activities_path %> </br>
+  		<%= link_to "<<Prev", activity_path(@activities[@prev].id) if @prev %> </br>
+  		<%= link_to "Next>>", activity_path(@activities[@next].id) if @next %> </br>
+  	</div> </br>
+</section>

@@ -40,6 +40,7 @@ class ProfessorsController < ApplicationController
   def init_topic
     @professor = Professor.find(params[:id])
     @subjects = @professor.subjects
+    @activities = @professor.activities
   end
   
   def init_from_page
@@ -48,6 +49,9 @@ class ProfessorsController < ApplicationController
     
     @from_meeting_id = params[:from_meeting]
     @from_meeting = Meeting.find(@from_meeting_id) if @from_meeting_id
+    
+    @from_activity_id = params[:from_activity]
+    @from_activity = Activity.find(@from_activity_id) if @from_activity_id
   end
   
   private

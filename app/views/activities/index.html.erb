@@ -1,0 +1,15 @@
+<h1>ATTIVITA' EXTRA SCOLASTICHE</h1>
+
+<p class = "ida_description">Skuola 42 al fine di arricchire l'offerta formativa e per rispondere alle esigenze e alle inclinazioni di ogni singolo alunno, offre la possibilità di partecipare ad attività extra attivate da docenti o organizzazioni esterne.</p>
+
+<%= link_to 'Inizia il tour delle attività', activity_path(@activities[0].id) %>
+    
+<div class = "group_link">
+  <ul>
+    <% @activities.each do |a| %>
+      <li class = "bullet">
+        <%= link_to a.name, activity_path(a) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
