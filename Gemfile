@@ -41,5 +41,8 @@ gem 'tzinfo-data'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.1'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'pry'
 end
 
