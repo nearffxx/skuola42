@@ -4,9 +4,9 @@
 
 <div id="meeting_professors">
   <h4>Professori che partecipano</h4>
-  <ul>
+  <ul class="horizontal">
     <% @professors.each do |p| %>
-      <li class="bullet">
+      <li >
         <%= link_to p.name+' '+p.surname, professor_path(p, from_meeting: @meeting) %>
       </li>
     <% end %>

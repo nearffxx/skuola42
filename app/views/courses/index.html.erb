@@ -1,47 +1,47 @@
 <% provide(:title, 'Course') %>
 <h1>CLASSI DELL'ISTITUTO</h1>
-<h3>Da qui si possono raggiungere le informazioni pratiche e didattiche di tutte le classi dell' istituto.<h3>
+<h3>Da qui si possono raggiungere le informazioni pratiche e didattiche di tutte le classi dell' istituto.</h3>
 <div id = "list_courses">
   <h3>PRIME SEZIONI</h3>
-  <ul>
+  <ul class="horizontal">
     <% @first_year_courses.each do |c| %>
-      <li class=horizontal>
+      <li>
         <%= link_to c.name, course_path(c) %>
       </li>
     <% end %>
   </ul>
      
   <h3>SECONDE SEZIONI</h3>
-  <ul>
+  <ul class="horizontal">
     <% @second_year_courses.each do |c| %>
-      <li class=horizontal>
+      <li>
         <%= link_to c.name, course_path(c) %>
       </li>
     <% end %>
   </ul>
         
   <h3>TERZE SEZIONI</h3>
-  <ul>
+  <ul class="horizontal">
     <% @third_year_courses.each do |c| %>
-      <li class=horizontal>
+      <li>
         <%= link_to c.name, course_path(c) %>
       </li>
     <% end %>
   </ul>
 
   <h3>QUARTE SEZIONI</h3>
-  <ul>
+  <ul class="horizontal">
     <% @fourth_year_courses.each do |c| %>
-      <li class=horizontal>
+      <li>
         <%= link_to c.name, course_path(c) %>
       </li>
     <% end %>
   </ul>
         
   <h3>QUINTE SEZIONI</h3>
-  <ul>
+  <ul class="horizontal">
     <% @fifth_year_courses.each do |c| %>
-      <li class=horizontal>
+      <li>
         <%= link_to c.name, course_path(c) %>
       </li>
     <% end %>

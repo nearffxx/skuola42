@@ -2,11 +2,11 @@
 <h1>CLASSE: <%= @course.name %></h1>
 
 <div class = "structural_link">
-  <%= link_to 'Libri di testo e riferimenti ausiliari', show_materials_course_path(@course) %> </br>
+  <%= link_to 'Libri di testo e riferimenti ausiliari', show_materials_course_path(@course) %>
 </div>
 
 <div class = "transition_link">
-  <%= link_to "Torna alle classi in cui si fa #{@from_subject.name}", show_courses_subject_path(@from_subject_id) if @from_subject_id %> </br>
+  <%= link_to "Torna alle classi in cui si fa #{@from_subject.name}", show_courses_subject_path(@from_subject_id) if @from_subject_id %>
 </div>
 
 <div class = "group_link">
@@ -28,7 +28,11 @@
     
 <div class = "transition_link">
   <h3>Materie</h3>
-    <% @subjects.each do |s| %>
-      <%= link_to s.name, subject_path(id: s, from_course: @course) %> | 
-    <% end %>
+    <ul class="horizontal">
+      <% @subjects.each do |s| %>
+        <li>
+          <%= link_to s.name, subject_path(id: s, from_course: @course) %>
+        </li>
+      <% end %>
+    </ul>
 </div>

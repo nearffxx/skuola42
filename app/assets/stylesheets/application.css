@@ -15,32 +15,26 @@
  */
 
 #container {
-  max-width: 1000px;
   padding: 0.5em;
   clear: both;
 }
 
 #container2 {
-  margin: 0.2em 1em 1em 1em;
-  float: left;
-  width: 800px;
-  margin-right: auto;
+  margin: 0 1em 0 10em;
 }
 
 #home_title {
   font-family: "Brush Script MT", cursive;
   float: left;
-  margin: 2em 0.5em 2em 0;
+  margin: 2.5em 0 0 0;
 }
 
 #page_wrap {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto 40px;
+  margin: 1em 1em 1em 1em;
   box-shadow: 0px 10px 20px 3px #d3d3d3;
   border-radius: 10px;
 }
 
 #header_sito {
-  margin: 2em 0;
+  margin: 2em 20% 0 20%;
 }

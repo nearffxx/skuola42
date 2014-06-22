@@ -1,9 +1,9 @@
 <h1>INCONTRI A CUI PARTECIPA <%= @professor.name+' '+@professor.surname %></h1>
 
 <div class = "transition_link">
-  <ul>
+  <ul class="horizontal">
     <% @meetings.each do |m| %>
-        <li class = "bullet">
+        <li>
             <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m, from_professor: @professor) %>
         </li>
     <% end %>

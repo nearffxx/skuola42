@@ -5,9 +5,9 @@
 <%= link_to 'Inizia il tour delle attività', activity_path(@activities[0].id) %>
     
 <div class = "group_link">
-  <ul>
+  <ul class="horizontal">
     <% @activities.each do |a| %>
-      <li class = "bullet">
+      <li>
         <%= link_to a.name, activity_path(a) %>
       </li>
     <% end %>

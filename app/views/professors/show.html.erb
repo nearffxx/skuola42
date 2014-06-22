@@ -4,29 +4,48 @@
   <%= image_tag("/professors/#{@professor.img_url}") %>
 </div>
 
-<div id="professor_contacts">
-  <h3>Contatti</h3>
-  <h4>Email: </h4> <%= @professor.email %>
-  <h4>Telefono: </h4> <%= @professor.telephone %>
-</div>
+<div class=left>
+  <div id="professor_contacts">
+    <h3>Contatti</h3>
+    <h4>Email: </h4> <%= @professor.email %>
+    <h4>Telefono: </h4> <%= @professor.telephone %>
+  </div>
 
-<div class="transition_link">
-  <h3>Materie insegnate</h3>
-  <% @subjects.each do |s| %>
-    <%= link_to s.name, subject_path(id: s, from_professor: @professor) %> | 
-  <% end %>
-  
-  <h3>Attività coordinate</h3>
-  <% @activities.each do |a| %>
-    <%= link_to a.name, activity_path(id: a, from_professor: @professor) %> | 
-  <% end %>
-</div>
+  <div class="transition_link">
+    <h3>Materie insegnate</h3>
+      <ul class="horizontal">
+        <% @subjects.each do |s| %>
+          <li>
+            <%= link_to s.name, subject_path(id: s, from_professor: @professor) %>
+          </li>
+        <% end %>
+      </ul>
+    
+    <h3>Attività coordinate</h3>
+      <ul class="horizontal">
+        <% @activities.each do |a| %>
+          <li>
+            <%= link_to a.name, activity_path(id: a, from_professor: @professor) %>
+          </li>
+        <% end %>
+      </ul>
 
-<div class="transition_link">
-  <%= link_to 'Incontri', show_meetings_professor_path(@professor) %> </br>
-  <%= link_to "Torna ai professori di #{@from_subject.name}", show_professors_subject_path(@from_subject_id) if @from_subject_id %> </br>
-  <%= link_to "Torna all'incontro del #{@from_meeting.datetime.to_formatted_s(:short)}", meeting_path(@from_meeting_id) if @from_meeting_id %> </br>
-  <%= link_to "Torna all'attività #{@from_activity.name}", activity_path(@from_activity_id) if @from_activity_id %> </br>
+    <h3>Incontri</h3>
+      <ul class="horizontal">
+          <li>
+            <%= link_to 'Incontri', show_meetings_professor_path(@professor) %>
+          </li>
+          <li>
+            <%= link_to "Torna ai professori di #{@from_subject.name}", show_professors_subject_path(@from_subject_id) if @from_subject_id %>
+          </li>
+          <li>
+            <%= link_to "Torna all'incontro del #{@from_meeting.datetime.to_formatted_s(:short)}", meeting_path(@from_meeting_id) if @from_meeting_id %>
+          </li>
+          <li>
+            <%= link_to "Torna all'attività #{@from_activity.name}", activity_path(@from_activity_id) if @from_activity_id %>
+          </li>
+      </ul>
+  </div>
 </div>
 
 <div class="group_link">  

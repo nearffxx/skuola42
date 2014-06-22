@@ -7,15 +7,10 @@ describe "TestPages", :type => :request do
       expect(response.status).to be(200)
     end
   end
-  describe "GET /" do
+  
+  describe "GET /home" do
     it do
-      get root_path
-      expect(response.status).to be(200)
-    end
-  end
-  describe "GET /" do
-    it do
-      get root_path
+      get home_path
       expect(response.status).to be(200)
     end
   end

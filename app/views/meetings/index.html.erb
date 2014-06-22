@@ -1,84 +1,85 @@
 <h1>INCONTRI PER CLASSE</h1>
 
-<p class = "ida_description">I colloqui sono rivolti a tutti i genitori degli studenti di una certa classe, ed è un modo per comunicare l'andamento scolastico ed eventuali problemi dei ragazzi. Da qui si possono raggiungere informazioni più dettagliate riguardo all'incontro.</p>
+<p class="ida_description">I colloqui sono rivolti a tutti i genitori degli studenti di una certa classe, ed è un modo per comunicare l'andamento scolastico ed eventuali problemi dei ragazzi. Da qui si possono raggiungere informazioni più dettagliate riguardo all'incontro.</p>
   
-<div id = "list_meetings">
-  <div class = "section_meetings">
+<div id="list_meetings">
+  <div class="section_meetings">
     <h3>PRIME SEZIONI</h3>
-    <ul>
+    <div class="meetings">
       <% @hash_course_first_year.each do |k,h| %>
-        <div class = "meetings">
-          <h4><%= k %></h4>
+        <h4><%= k %></h4>
+        <ul class="horizontal">
           <% h.each do |m| %>
-            <li class = "bullet">
+            <li>
               <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
             </li>
           <% end %>
-        </div>
+        </ul>
       <% end %>
-    </ul>
+    </div>
   </div>
 
-<div class = "section_meetings">
-  <h3>SECONDE SEZIONI</h3>
-  <ul>
-    <% @hash_course_second_year.each do |k,h| %>
-      <div class = "meetings">
+  <div class="section_meetings">
+    <h3>SECONDE SEZIONI</h3>
+    <div class="meetings">
+      <% @hash_course_second_year.each do |k,h| %>
         <h4><%= k %></h4>
-        <% h.each do |m| %>
-          <li class = "bullet">
-            <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
-          </li>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
-</div>
-    
-<div class = "section_meetings">
-  <h3>TERZE SEZIONI</h3>
-  <ul>
-    <% @hash_course_third_year.each do |k,h| %>
-      <div class = "meetings">
-        <h4><%= k %></h4>
-        <% h.each do |m| %>
-          <li class = "bullet">
-            <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
-          </li>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
-</div>
+        <ul class="horizontal">
+          <% h.each do |m| %>
+            <li>
+              <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
       
-<div class = "section_meetings">
-  <h3>QUARTE SEZIONI</h3>
-  <ul>
-    <% @hash_course_fourth_year.each do |k,h| %>
-      <div class = "meetings">
+  <div class="section_meetings">
+    <h3>TERZE SEZIONI</h3>
+    <div class="meetings">
+      <% @hash_course_third_year.each do |k,h| %>
         <h4><%= k %></h4>
-        <% h.each do |m| %>
-          <li class = "bullet">
-            <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
-          </li>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
-</div>
-    
-<div class = "section_meetings">
-  <h3>QUINTE SEZIONI</h3>
-  <ul>
-    <% @hash_course_fifth_year.each do |k,h| %>
-      <div class = "meetings">
+        <ul class="horizontal">
+          <% h.each do |m| %>
+            <li>
+              <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+        
+  <div class="section_meetings">
+    <h3>QUARTE SEZIONI</h3>
+    <div class="meetings">
+      <% @hash_course_fourth_year.each do |k,h| %>
         <h4><%= k %></h4>
-        <% h.each do |m| %>
-          <li class = "bullet">
-            <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
-          </li>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
+        <ul class="horizontal">
+          <% h.each do |m| %>
+            <li>
+              <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+      
+  <div class="section_meetings">
+    <h3>QUINTE SEZIONI</h3>
+    <div class="meetings">
+      <% @hash_course_fifth_year.each do |k,h| %>
+        <h4><%= k %></h4>
+        <ul class="horizontal">
+          <% h.each do |m| %>
+            <li>
+              <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
 </div>

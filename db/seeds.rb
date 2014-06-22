@@ -131,8 +131,10 @@ schedules = Schedule.create([{course_id: courses[0].id, school_day_id: school_da
 Meeting.delete_all
 meetings = Meeting.create([{datetime: '2014-06-03 09:00', location: 'aula 9', course_id: courses[0].id},
                            {datetime: '2014-02-07 09:00', location: 'aula 10', course_id: courses[0].id},
-                           {datetime: '2014-05-03 09:00', location: 'aula 7', course_id: courses[1].id},
-                           {datetime: '2014-02-07 09:00', location: 'aula 10', course_id: courses[1].id}])
+                           {datetime: '2014-06-03 09:00', location: 'aula 9', course_id: courses[1].id},
+                           {datetime: '2014-02-07 09:00', location: 'aula 10', course_id: courses[1].id},
+                           {datetime: '2014-05-03 09:00', location: 'aula 7', course_id: courses[4].id},
+                           {datetime: '2014-02-07 09:00', location: 'aula 10', course_id: courses[4].id}])
 
 meetings[0].professors << Professor.where("surname = 'Binetti' or surname = 'Veloce' ")
 meetings[1].professors << Professor.where("surname = 'Binetti' or surname = 'Cabotto' ")

@@ -5,7 +5,7 @@
 <%= link_to 'Inizia il tour delle strutture', structure_path(@structures[0].id) %>
     
 <div id = "ida_list_structures">
-  <ul>
+  <ul class="horizontal">
     <% @structures.each do |s| %>
         <li class = "bullet">
             <%= link_to s.name, structure_path(s) %>

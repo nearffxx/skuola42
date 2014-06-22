@@ -40,9 +40,16 @@ gem 'tzinfo-data'
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.1'
+  gem 'rspec-rails'
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry'
+  gem 'factory_girl_rails'
 end
 
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+end
