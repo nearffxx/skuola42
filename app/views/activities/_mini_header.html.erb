@@ -1,0 +1,13 @@
+<% provide(:title, 'ATTIVITA') %>
+<div class="structural_link">
+  <ul class="horizontal">
+    <li>
+      <%= link_to 'Presentazione', activity_path(@activity) %>
+    </li>
+    <li>
+      <%= link_to 'Modalità', show_modality_activity_path(@activity) %>
+    </li>
+  </ul>
+</div>
+
+<h1><%= yield(:sub_title) %></h1>

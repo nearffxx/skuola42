@@ -2,7 +2,7 @@
 
 <p class="short_line">Data, ora e aula: <%= @meeting.datetime.to_formatted_s(:short) + ' ' + @meeting.location %></p>
 
-<div id="meeting_professors">
+<div class="transition_link">
   <h4>Professori che partecipano</h4>
   <ul class="horizontal">
     <% @professors.each do |p| %>
@@ -14,7 +14,11 @@
 </div>
 
 <div class="transition_link"> 
-  <%= link_to "Torna agli incontri di #{@from_professor.name+' '+@from_professor.surname}", show_meetings_professor_path(@from_professor_id) if @from_professor_id %>
+  <ul class="horizontal">
+    <li>
+      <%= link_to "Torna agli incontri di #{@from_professor.name+' '+@from_professor.surname}", show_meetings_professor_path(@from_professor_id) if @from_professor_id %>
+    </li>
+  </ul>
 </div>
 
 <div class="group_link">

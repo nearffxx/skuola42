@@ -2,12 +2,10 @@
 
 <p class = "ida_description">Da qui è possibile raggiungere i contatti dei professori.</p>
   
-<div class = "group_link">
-  <ul class="horizontal">
-    <% @professors.each do |p| %>
-      <li>
-        <%= link_to p.surname+' '+p.name, professor_path(p) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<ul class="horizontal">
+<% @professors.each do |p| %>
+  <li>
+    <%= link_to p.surname+' '+p.name, professor_path(p) %>
+  </li>
+<% end %>
+</ul>

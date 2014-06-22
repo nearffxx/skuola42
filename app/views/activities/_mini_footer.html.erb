@@ -1,0 +1,19 @@
+<div class="group_link">
+  <div>
+    <ul class="horizontal">
+      <li>
+        <%= link_to yield(:group_name), activities_path %>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="horizontal">
+      <li>
+        <%= link_to "<<Prev", activity_path(@activities[@prev].id) if @prev %>
+      </li>
+      <li>
+        <%= link_to "Next>>", activity_path(@activities[@next].id) if @next %>
+      </li>
+    </ul>
+  </div>
+</div>

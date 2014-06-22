@@ -1,0 +1,18 @@
+<div class ="group_link">
+  <ul class="horizontal">
+    <li>
+		  <%= link_to "Eventi per #{@type.name}", index_types_event_path(@type) %>
+		</li>
+	</ul>
+</div>
+
+<div class="transition_link">
+  <h3>Materie collegate</h3>
+  <ul class="horizontal">
+    <% @related_subjects.each do |s| %>
+      <li>
+        <%= link_to s.name, subject_path(s, from_event: @event.id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
