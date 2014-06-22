@@ -1,0 +1,24 @@
+<% provide(:title, 'MATERIA') %>
+<div class="structural_link inline">
+  <ul class="horizontal">
+    <li>
+      <%= link_to 'Programma', show_program_subject_path(@subject, from_year: @tour_year_id) %>
+    </li>
+    <li>
+      <%= link_to 'Descrizione', subject_path(@subject, from_year: @tour_year_id) %>
+    </li>
+    <li>
+      <%= link_to 'Eventi in cui è argomento', show_events_subject_path(@subject, from_year: @tour_year_id) %>
+    </li>
+    <li>
+      <%= link_to 'Professori che la insegnano', show_professors_subject_path(@subject, from_year: @tour_year_id) %>
+    </li>
+    <li>
+      <%= link_to 'Classi in cui viene insegnata', show_courses_subject_path(@subject, from_year: @tour_year_id) %>
+    </li>
+  </ul>
+</div>
+  
+<h3><%= "Tour materie del #{@tour_year_id}° anno" if @tour_year_id %></h3>
+
+<h1><%= yield(:sub_title) %></h1>

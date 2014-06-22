@@ -25,6 +25,10 @@ a {
   text-decoration: none;
 }
 
+.inline {
+  display: inline;
+}
+
 .left {
   float: left;
 }
@@ -33,10 +37,31 @@ a {
   float: right;
 }
 
-.transition_link > ul.horizontal{
-  border: 1px solid #ff9060;
+.structural_link ul.horizontal{
+  border: 1px solid #8888ff;
     li a:hover {
-      background-color: #ff9060;
+      background-color: #8888ff;
+      color: #ffffff;
+    }
+}
+
+.transition_link ul.horizontal{
+  border: 1px solid #ff6060;
+    li a:hover {
+      background-color: #ff6060;
+      color: #ffffff;
+    }
+}
+
+.group_link {
+  padding-top: 4em;
+  clear: both;
+}
+
+.group_link ul.horizontal{
+  border: 1px solid #aaaa00;
+    li a:hover {
+      background-color: #aaaa00;
       color: #ffffff;
     }
 }

@@ -26,16 +26,22 @@ class SubjectsController < ApplicationController
   end
   
   def show_professors
+    init_topic
+    init_tour
     @subject = Subject.find(params[:id])
     @professors = @subject.professors.order(surname: :asc, name: :asc)
   end
   
   def show_events
+    init_topic
+    init_tour
     @subject = Subject.find(params[:id])
     @events = @subject.events.order(datetime: :asc)
   end
   
   def show_courses
+    init_topic
+    init_tour
     @subject = Subject.find(params[:id])
     @courses = @subject.courses.order(school_year_id: :asc, name: :asc)
   end

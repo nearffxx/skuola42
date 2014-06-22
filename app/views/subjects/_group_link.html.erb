@@ -1,0 +1,19 @@
+<div class="group_link">
+  <div>
+    <ul class="horizontal">
+      <li>
+        <%= link_to yield(:group_name), subjects_path %>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="horizontal">
+      <li>
+        <%= link_to "<<Prev", subject_path(@subjects[@prev].id, from_year: @tour_year_id) if @prev %>
+      </li>
+      <li>
+        <%= link_to "Next>>", subject_path(@subjects[@next].id, from_year: @tour_year_id) if @next %>
+      </li>
+    </ul>
+  </div>
+</div>
