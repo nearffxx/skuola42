@@ -1,13 +1,5 @@
-<% provide(:title, 'Course Topic') %>
-<h1>LIBRI CLASSE: <%= @course.name %></h1>
-
-<div class = "structural_link">
-  <%= link_to 'Ubicazione e orario didattico', course_path(@course) %> </br>
-</div>
-
-<div class = "group_link">
-  <%= link_to 'Tutte le classi', courses_path %> </br>
-</div>
+<% provide(:sub_title, "LIBRI CLASSE: #{@course.name}") %>
+<%= render 'courses/mini_header' %>
 
 <div id = "course_bibliography">
   <h3>Bibliografia</h3>
@@ -15,9 +7,5 @@
   <p class = "description_topic"><%= @course.extra_materials %></p>
 </div>
 
-<div class = "transition_link">
-  <h3>Materie</h3>
-  <% @subjects.each do |s| %>
-      <%= link_to s.name, subject_path(id: s, from_course: @course) %> | 
-  <% end %>
-</div>
+<%= render 'courses/transition_link' %>
+<%= render 'courses/group_link' %>

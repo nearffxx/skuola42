@@ -1,0 +1,14 @@
+<% provide(:title, 'CORSO') %>
+<div class="structural_link">
+  <ul class="horizontal">
+    <li>
+      <%= link_to 'Ubicazione e orario didattico', course_path(@course) %>
+    </li>
+    <li>
+      <%= link_to 'Libri di testo e riferimenti ausiliari', show_materials_course_path(@course) %>
+    </li>
+  </ul>
+</div>
+
+<h1><%= yield(:sub_title) %></h1>
+  
