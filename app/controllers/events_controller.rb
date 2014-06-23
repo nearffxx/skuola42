@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     init_from_page
   end
   
-  def show_practical_info
+  def show_description
     init_topic
   end
   

@@ -7,6 +7,7 @@ class StructuresController < ApplicationController
 
   def show
     init_topic
+    init_from_page
     init_tour
   end
   
@@ -36,11 +37,19 @@ class StructuresController < ApplicationController
   def init_topic
     @structure = Structure.find(params[:id])
   end
-  
+
+  def init_from_page
+    @from_event_id = params[:from_event]
+    @from_event = Event.find(@from_event_id) if @from_event_id
+  end
+   
   def init_tour
+    @from_guided_tour = params[:from_guided_tour]
     @structures = Structure.all
     @index = @structures.index(@structure)
     set_index_tour(@index,@structures)
+    @next_show = @next && @from_guided_tour
+    @prev_show = @prev && @from_guided_tour
   end
   
   private

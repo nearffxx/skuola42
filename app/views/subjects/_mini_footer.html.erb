@@ -9,11 +9,17 @@
   <div>
     <ul class="horizontal">
       <li>
-        <%= link_to "<<Prev", subject_path(@subjects[@prev].id, from_year: @tour_year_id) if @prev %>
+        <%= link_to "<<Prev", subject_path(@subjects[@prev].id, from_year: @tour_year_id) if @prev_show %>
       </li>
       <li>
-        <%= link_to "Next>>", subject_path(@subjects[@next].id, from_year: @tour_year_id) if @next %>
+        <%= link_to "Next>>", subject_path(@subjects[@next].id, from_year: @tour_year_id) if @next_show %>
       </li>
     </ul>
   </div>
+</div>
+
+<div class = "back_link">
+	<%= link_to "Torna al professore #{@from_professor.surname+' '+@from_professor.name}", professor_path(@from_professor_id) if @from_professor_id %>
+	<%= link_to "Torna all'evento #{@from_event.name}", event_path(@from_event_id) if @from_event_id %>
+	<%= link_to "Torna al corso #{@from_course.name}", course_path(@from_course_id) if @from_course_id %>
 </div>

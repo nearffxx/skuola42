@@ -2,15 +2,13 @@
 
 <h1>EVENTO <%= @event.name %></h1>
 
-<p class = "short_line">Data e ora: <%= @event.datetime.to_formatted_s(:short) %></p>
-
 <div class="structural_link">
   <ul class="horizontal">
     <li>
-      <%= link_to 'Descrizione dettagliata', event_path(@event) %>
+    	 <%= link_to 'Info pratiche', event_path(@event) %>
     </li>
     <li>
-      <%= link_to 'Info pratiche', show_practical_info_event_path(@event) %>
+     	 <%= link_to 'Descrizione dettagliata', show_description_event_path(@event) %>
     </li>
   </ul>
 </div>

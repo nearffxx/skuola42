@@ -12,9 +12,6 @@
     <li>
       <%= link_to "Professore responsabile dell'attività", professor_path(@professor, from_activity: @activity) %>
     </li>
-    <li>
-      <%= link_to "Torna al professore #{@from_professor.surname+' '+@from_professor.name}", professor_path(@from_professor_id) if @from_professor_id %>
-    </li>
   </ul>
 </div>
 

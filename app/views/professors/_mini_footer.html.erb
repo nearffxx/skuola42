@@ -1,0 +1,13 @@
+<div class="group_link">  
+  <ul class="horizontal">
+    <li>
+      <%= link_to 'Tutti i professori', professors_path %>
+    </li>
+  </ul>
+</div>
+
+<div class = "back_link">
+	<%= link_to "Torna ai professori di #{@from_subject.name}", show_professors_subject_path(@from_subject_id) if @from_subject_id %>
+	<%= link_to "Torna all'incontro del #{@from_meeting.datetime.to_formatted_s(:long)}", meeting_path(@from_meeting_id) if @from_meeting_id %>
+	<%= link_to "Torna all'attività #{@from_activity.name}", activity_path(@from_activity_id) if @from_activity_id %>
+</div>

@@ -1,20 +1,25 @@
 <nav id="landmarks">
   <ul>
-
-    <h4>BENVENUTO</h4>
-    <li>
-      <%= link_to 'Storia e tradizione', school_index_path %>
-    </li>
-    <li>
-      <%= link_to 'Missione e principi', school_show_missions_path %>
-    </li>
-    <li>
-      <%= link_to 'Regole generali', school_show_rules_path %>
-    </li>
-    <li>
-      <%= link_to 'Associazione genitori', school_show_association_path %>
-    </li>
-
+  	<h4>BENVENUTO</h4>
+  	<a href="#hide1" class="hide" id="hide1">+Scuola</a>
+	<a href="#show1" class="show" id="show1">-Scuola</a>
+  	<div class="list">
+		<ul>
+    		<li>
+      			<%= link_to 'Storia e tradizione', school_index_path %>
+    		</li>
+    		<li>
+      			<%= link_to 'Missione e principi', school_show_missions_path %>
+    		</li>
+    		<li>
+      			<%= link_to 'Regole generali', school_show_rules_path %>
+    		</li>
+    		<li>
+      			<%= link_to 'Associazione genitori', school_show_association_path %>
+    		</li>
+    	</ul>
+    </div>
+    
     <h4>UTILITA'</h4>
     <li>
       <%= link_to 'Strutture', structures_path %>

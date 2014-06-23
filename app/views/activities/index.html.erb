@@ -4,12 +4,12 @@
 
 <p class = "ida_description">Skuola 42 al fine di arricchire l'offerta formativa e per rispondere alle esigenze e alle inclinazioni di ogni singolo alunno, offre la possibilità di partecipare ad attività extra attivate da docenti o organizzazioni esterne.</p>
 
-<%= link_to 'Inizia il tour delle attività', activity_path(@activities[0].id) %>
+<%= link_to 'Inizia il tour delle attività', activity_path(@activities[0].id, from_guided_tour: true) %>
     
 <ul class="horizontal">
-<% @activities.each do |a| %>
-  <li>
-    <%= link_to a.name, activity_path(a) %>
-  </li>
-<% end %>
+	<% @activities.each do |a| %>
+  		<li>
+    		<%= link_to a.name, activity_path(a, from_guided_tour: true) %>
+  		</li>
+	<% end %>
 </ul>

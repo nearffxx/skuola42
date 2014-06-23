@@ -1,10 +1,6 @@
 <% provide(:sub_title, "CLASSE: #{@course.name}") %>
 <%= render 'courses/mini_header' %>
 
-<div class = "transition_link">
-  <%= link_to "Torna alle classi in cui si fa #{@from_subject.name}", show_courses_subject_path(@from_subject_id) if @from_subject_id %>
-</div>
-
 <div id = "course_room">
   <h3>Raggiungere l'aula</h3>
   <p class = "short_line"><%= @course.location%></p>

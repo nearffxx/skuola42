@@ -26,22 +26,16 @@ class SubjectsController < ApplicationController
   end
   
   def show_professors
-    init_topic
-    init_tour
     @subject = Subject.find(params[:id])
     @professors = @subject.professors.order(surname: :asc, name: :asc)
   end
   
   def show_events
-    init_topic
-    init_tour
     @subject = Subject.find(params[:id])
     @events = @subject.events.order(datetime: :asc)
   end
   
   def show_courses
-    init_topic
-    init_tour
     @subject = Subject.find(params[:id])
     @courses = @subject.courses.order(school_year_id: :asc, name: :asc)
   end
@@ -67,6 +61,8 @@ class SubjectsController < ApplicationController
       @subjects = Subject.joins(:plans).where(plans: {school_year_id: @tour_year_id}).order(name: :asc)
       @index = @subjects.index(@subject)
       set_index_tour(@index,@subjects)
+      @next_show = @next
+      @prev_show = @prev
     end
   end
 end

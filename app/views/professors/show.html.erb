@@ -2,18 +2,21 @@
 
 <h1>PROFESSORE <%= @professor.surname+' '+@professor.name %></h1>
 
-<div class="image">
+<div class="image_left_text">
   <%= image_tag("/professors/#{@professor.img_url}") %>
+  <p><h3>Contatti</h3>
+    Email: <%= @professor.email %> </br>
+    Telefono: <%= @professor.telephone %> </br></p>
 </div>
 
-<div class=left>
-  <div id="professor_contacts">
-    <h3>Contatti</h3>
-    <h4>Email: </h4> <%= @professor.email %>
-    <h4>Telefono: </h4> <%= @professor.telephone %>
-  </div>
-
+<div class = "left"> 
   <div class="transition_link">
+  	<ul class="horizontal">
+    	<li>
+        	<%= link_to 'Incontri', show_meetings_professor_path(@professor) %>
+       	</li>
+  	</ul>
+  	
     <h3>Materie insegnate</h3>
       <ul class="horizontal">
         <% @subjects.each do |s| %>
@@ -31,29 +34,7 @@
           </li>
         <% end %>
       </ul>
-
-    <h3>Incontri</h3>
-      <ul class="horizontal">
-          <li>
-            <%= link_to 'Incontri', show_meetings_professor_path(@professor) %>
-          </li>
-          <li>
-            <%= link_to "Torna ai professori di #{@from_subject.name}", show_professors_subject_path(@from_subject_id) if @from_subject_id %>
-          </li>
-          <li>
-            <%= link_to "Torna all'incontro del #{@from_meeting.datetime.to_formatted_s(:short)}", meeting_path(@from_meeting_id) if @from_meeting_id %>
-          </li>
-          <li>
-            <%= link_to "Torna all'attività #{@from_activity.name}", activity_path(@from_activity_id) if @from_activity_id %>
-          </li>
-      </ul>
   </div>
 </div>
 
-<div class="group_link">  
-  <ul class="horizontal">
-    <li>
-      <%= link_to 'Tutti i professori', professors_path %>
-    </li>
-  </ul>
-</div>
+<%= render 'professors/mini_footer' %>

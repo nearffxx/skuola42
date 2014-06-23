@@ -7,7 +7,7 @@
 <ul class="horizontal">
   <% @events.each do |e| %>
     <li class>
-      <%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(e) %>
+      <%= link_to e.datetime.to_formatted_s(:long)+' '+e.name, event_path(e) %>
     </li>
   <% end %>
 </ul>

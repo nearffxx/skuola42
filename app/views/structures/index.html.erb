@@ -4,13 +4,13 @@
 
 <p class="ida_description">La scuola è dotata di diverse strutture e ampi spazi per svolgere le attività didattiche ed ospitare gli eventi organizzati durante l'anno scolastico.</p>
 
-<%= link_to 'Inizia il tour delle strutture', structure_path(@structures[0].id) %>
+<%= link_to 'Inizia il tour delle strutture', structure_path(@structures[0].id, from_guided_tour: true) %>
     
 <div id="ida_list_structures">
   <ul class="horizontal">
     <% @structures.each do |s| %>
         <li>
-            <%= link_to s.name, structure_path(s) %>
+            <%= link_to s.name, structure_path(s, from_guided_tour: true) %>
         </li>
     <% end %>
   </ul>

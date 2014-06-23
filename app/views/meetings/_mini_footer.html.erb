@@ -1,0 +1,11 @@
+<div class="group_link">
+  <ul class="horizontal">
+    <li>
+      <%= link_to 'Incontri per classe', meetings_path %>
+    </li>
+  </ul>
+</div>
+
+<div class = "back_link">
+	<%= link_to "Torna agli incontri di #{@from_professor.name+' '+@from_professor.surname}", show_meetings_professor_path(@from_professor_id) if @from_professor_id %>
+</div>

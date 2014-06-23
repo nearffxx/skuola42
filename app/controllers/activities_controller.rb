@@ -46,9 +46,12 @@ class ActivitiesController < ApplicationController
   end
   
   def init_tour
+    @from_guided_tour = params[:from_guided_tour]
     @activities = Activity.all
     @index = @activities.index(@activity)
     set_index_tour(@index,@activities)
+    @next_show = @next && @from_guided_tour
+    @prev_show = @prev && @from_guided_tour
   end
   
   private

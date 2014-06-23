@@ -1,20 +1,15 @@
-<% provide(:sub_title, "Descrizione") %>
+<% provide(:sub_title, "Data e interventi") %>
 <%= render 'events/mini_header' %>
 
-<p class="description_topic"><%= @event.description %></p>
+<p class = "short_line"><%= @event.datetime.to_formatted_s(:short) %></p>
+<p class = "description_topic"><%= @event.participations %></p>
 
-<div class="transition_link">
-  <ul class="horizontal">
-    <li>
-      <%= link_to "Struttura che ospita l'evento", structure_path(@host_structure) %>
-    </li>
-    <li>
-      <%= link_to "Torna agli eventi ospitati dalla struttura #{@from_host.name}", show_events_structure_path(@from_host_id) if @from_host_id %>
-    </li>
-    <li>
-      <%= link_to "Torna agli argomenti che riguardano #{@from_events_subject.name}", show_events_subject_path(@from_events_subject_id) if @from_events_subject_id %>
-    </li>
-  <ul>
+<div class = "transition_link">
+  	<ul class="horizontal">
+  		<li>
+			<%= link_to "Struttura che ospita l'evento", structure_path(@host_structure, from_event: @event) %>
+		</li>
+	</ul>
 </div>
 
 <%= render 'events/mini_footer' %>

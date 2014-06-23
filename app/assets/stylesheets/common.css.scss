@@ -66,6 +66,17 @@ a {
     }
 }
 
+.back_link {
+  border: 3px solid #cc6633;
+  margin: 0;
+  padding: 0;
+  display: table-cell;
+  a:hover {
+    background-color: #cc6633;
+    color: #ffffff;
+  }
+}
+
 ul {
   border-radius: 6px;
 }

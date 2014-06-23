@@ -1,6 +1,5 @@
 Skuola42::Application.routes.draw do
   root to: "home#index"
-  match 'home' => 'home#index', via: :get 
   match 'editorial' => 'editorial#index', via: :get, as: :editorials
   match 'error_editorial' => 'editorial#error', via: :get, as: :error_editorial
   get 'school/index'
@@ -32,7 +31,7 @@ Skuola42::Application.routes.draw do
   resources :events, only: [:index, :show, :new, :create] do
     member do
       get 'index_types'
-      get 'show_practical_info'
+      get 'show_description'
     end
   end
   

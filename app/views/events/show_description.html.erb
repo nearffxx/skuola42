@@ -1,0 +1,14 @@
+<% provide(:sub_title, "Descrizione") %>
+<%= render 'events/mini_header' %>
+
+<p class="description_topic"><%= @event.description %></p>
+
+<div class="transition_link">
+  <ul class="horizontal">
+    <li>
+      <%= link_to "Struttura che ospita l'evento", structure_path(@host_structure, from_event: @event) %>
+    </li>
+  <ul>
+</div>
+
+<%= render 'events/mini_footer' %>

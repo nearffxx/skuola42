@@ -16,3 +16,8 @@
     <% end %>
   </ul>
 </div>
+
+<div class = "back_link">
+	<%= link_to "Torna agli eventi ospitati dalla struttura #{@from_host.name}", show_events_structure_path(@from_host_id) if @from_host_id %>
+	<%= link_to "Torna agli eventi che riguardano #{@from_events_subject.name}", show_events_subject_path(@from_events_subject_id) if @from_events_subject_id %>
+</div>

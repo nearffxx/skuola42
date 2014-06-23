@@ -6,12 +6,12 @@
   <ul class="horizontal">
     <% @meetings.each do |m| %>
         <li>
-            <%= link_to m.datetime.to_formatted_s(:short), meeting_path(m, from_professor: @professor) %>
+            <%= link_to m.datetime.to_formatted_s(:long), meeting_path(m, from_professor: @professor) %>
         </li>
     <% end %>
   </ul>
 </div>
 
-<div class = "transition_link">
-  <%= link_to "Indietro al professore #{@professor.name+' '+@professor.surname }", professor_path(@professor) %> </br>
+<div class = "back_link">
+	<%= link_to "Indietro al professore #{@professor.name+' '+@professor.surname }", professor_path(@professor) %>
 </div>
