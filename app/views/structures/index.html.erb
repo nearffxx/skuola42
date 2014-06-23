@@ -1,13 +1,15 @@
+<% provide(:title, 'STRUTTURE') %>
+
 <h1>STRUTTURE DELLA SCUOLA</h1>
 
-<p class = "ida_description">La scuola è dotata di diverse strutture e ampi spazi per svolgere le attività didattiche ed ospitare gli eventi organizzati durante l'anno scolastico.</p>
+<p class="ida_description">La scuola è dotata di diverse strutture e ampi spazi per svolgere le attività didattiche ed ospitare gli eventi organizzati durante l'anno scolastico.</p>
 
 <%= link_to 'Inizia il tour delle strutture', structure_path(@structures[0].id) %>
     
-<div id = "ida_list_structures">
+<div id="ida_list_structures">
   <ul class="horizontal">
     <% @structures.each do |s| %>
-        <li class = "bullet">
+        <li>
             <%= link_to s.name, structure_path(s) %>
         </li>
     <% end %>

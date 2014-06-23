@@ -3,12 +3,8 @@ require "rails_helper"
 feature "Use Case:" do
 
   before do
-    # could be usefull
-    # c = FactoryGirl.create(:course)
-    # m = FactoryGirl.create(:meeting)
-    # fill_in "Name", :with => "My Widget"
-    # save_and_open_page
-    # could be usefull
+    # Questi test sono fatti per aiutare lo sviluppatore a la parte restante del sito nei use case base.
+    # dato che richiedono ancune parti che non abbiamo fatto ancora essi falliscono (il che e' buono).
   end
 
   scenario "#1 La mamma Giorgia consulta le date dei colloqui" do

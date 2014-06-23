@@ -1,14 +1,21 @@
+<% provide(:title, 'STRUTTURE') %>
+
 <h1>EVENTI IN <%= @structure.name %></h1>
 
-<div class = "transition_link">
-  <ul>
+<div class="transition_link">
+  <ul class="horizontal">
     <% @events.each do |e| %>
-      <li class = "bullet">
+      <li>
           <%= link_to e.datetime.to_formatted_s(:short)+' '+e.name, event_path(e, from_structure: @structure) %>
       </li>
     <% end %>
   </ul>
 </div>
-<div class = "transition_link">
-  <%= link_to "Indietro alla struttura #{@structure.name}", structure_path(@structure) %>
+
+<div class="transition_link">
+  <ul class="horizontal">
+    <li>
+      <%= link_to "Indietro alla struttura #{@structure.name}", structure_path(@structure) %>
+    </li>
+  </ul>
 </div>

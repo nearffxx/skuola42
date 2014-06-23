@@ -1,0 +1,19 @@
+<div class="group_link">
+  <div>
+    <ul class="horizontal">
+      <li>
+        <%= link_to 'Tutte le strutture', structures_path %>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="horizontal">
+      <li>
+        <%= link_to "<<Prev", structure_path(@structures[@prev].id) if @prev %>
+      </li>
+      <li>
+        <%= link_to "Next>>", structure_path(@structures[@next].id) if @next %>
+      </li>
+    </ul>
+  </div>
+</div>

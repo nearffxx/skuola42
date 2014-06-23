@@ -1,3 +1,5 @@
+<% provide(:title, 'INCONTRI') %>
+
 <h1>INCONTRI CLASSE <%= @course.name %></h1>
 
 <p class="short_line">Data, ora e aula: <%= @meeting.datetime.to_formatted_s(:short) + ' ' + @meeting.location %></p>
