@@ -2,11 +2,20 @@ class SubjectsController < ApplicationController
   include ApplicationHelper
   
   def index
-    @first_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: '1' }).order(name: :asc)
-    @second_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: '2' }).order(name: :asc)
-    @third_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: '3'}).order(name: :asc)
-    @fourth_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: '4' }).order(name: :asc)
-    @fifth_year_subjects = Subject.joins(:plans).where(plans: {school_year_id: '5' }).order(name: :asc)
+    @first_school_year = SchoolYear.find(1)
+    @first_year_subjects = @first_school_year.subjects.order(name: :asc)
+    
+    @second_school_year = SchoolYear.find(2)
+    @second_year_subjects = @second_school_year.subjects.order(name: :asc)
+    
+    @third_school_year = SchoolYear.find(3)
+    @third_year_subjects = @third_school_year.subjects.order(name: :asc)
+    
+    @fourth_school_year = SchoolYear.find(4)
+    @fourth_year_subjects = @fourth_school_year.subjects.order(name: :asc)
+    
+    @fifth_school_year = SchoolYear.find(5)
+    @fifth_year_subjects = @fifth_school_year.subjects.order(name: :asc)
   end
 
   def show
