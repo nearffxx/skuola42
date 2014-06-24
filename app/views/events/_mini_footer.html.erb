@@ -1,7 +1,7 @@
 <div class ="group_link">
-  <ul class="horizontal">
-    <li>
-		  <%= link_to "Eventi per #{@type.name}", index_types_event_path(@type) %>
+  	<ul class="horizontal">
+   		<li>
+			<%= link_to "Eventi per #{@type.name}", events_path(id: @type.id) %>
 		</li>
 	</ul>
 </div>

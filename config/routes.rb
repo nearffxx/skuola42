@@ -28,9 +28,10 @@ Skuola42::Application.routes.draw do
     end
   end
   
+  resources :event_types, only: [:index]
+  
   resources :events, only: [:index, :show, :new, :create] do
     member do
-      get 'index_types'
       get 'show_description'
     end
   end

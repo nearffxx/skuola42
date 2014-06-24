@@ -1,0 +1,13 @@
+<% provide(:title, 'EVENTI') %>
+
+<h1>CATEGORIE DI EVENTO</h1>
+
+<p class = "ida_description">La scuola organizza varie categorie di eventi, a cui occasionalmente partecipano persone importanti e conosciute a livello nazionale. Si affronteranno tematiche interessanti che non potrete perdere.</p>
+
+<ul class="horizontal">
+<% @event_types.each do |t| %>
+  <li>
+    <%= link_to t.name, events_path(id: t.id) %>
+  </li>
+<% end %>
+</ul>

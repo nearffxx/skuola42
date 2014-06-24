@@ -1,9 +1,5 @@
 class EventsController < ApplicationController
   def index
-    @event_types = EventType.all
-  end
-  
-  def index_types
     @type = EventType.find(params[:id])
     @events = Event.where(event_type_id: @type.id).order(datetime: :asc)
   end
@@ -40,7 +36,7 @@ class EventsController < ApplicationController
   
   def init_topic
     @event = Event.find(params[:id])
-    @type = EventType.find(@event.event_type_id)
+    @type = @event.event_type
     @host_structure = Structure.find(@event.structure_id)
     @related_subjects = @event.subjects
   end
